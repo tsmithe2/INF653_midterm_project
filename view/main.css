@@ -1,0 +1,87 @@
+header
+{
+    border-bottom: 2px solid black;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+footer
+{
+    border-top: 2px solid black;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: right;
+}
+#sel
+{
+    width: 97%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#sort
+{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+#sort input[type=radio]
+{
+    transform: scale(1.2);
+}
+#tab
+{
+    table-layout: fixed;
+    border: 1px solid black;
+    width: 97%;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#nav
+{
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#nav #butn
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#nput_form
+{
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#nput_form #nput
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#nput_form #nput_s
+{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+@media only screen and (max-width: 650px)
+{
+    #tab
+    {
+        table-layout: fixed;
+        display: block;
+        width: 97%;
+        overflow-x: scroll;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
