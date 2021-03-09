@@ -1,10 +1,11 @@
 <?php
+    $hostname = 'eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
     $dsn = 'y15ma8233qeiei71';
     $username = 'a36r0n5p9xrvfqpe';
     $password = 'puilsn09m55nmfjl';
 
     try {
-        $db = new PDO($dsn, $username, $password);
+        $db = new PDO($hostname, $dsn, $username, $password);
     } catch (PDOException $e) {
         $error_message = $e->getMessage();
         include('view/database_error.php');
