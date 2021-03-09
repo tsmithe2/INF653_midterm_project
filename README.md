@@ -1,2 +1,2 @@
 # INF 653 VC Midterm Project
-## This project uses the MVC model to implement a small used car lot's inventory. There are files for the admin and users. The user will be able to browse the listings, while the admin may edit the listings by adding or removing vehicles, makes, type, and classes. With my program, the user may search with all three criteria and sort by price or by year.
+## This project uses the MVC model to implement a small used car lot's inventory. There are files for the admin and users. The user will be able to browse the listings, while the admin may edit the listings by adding or removing vehicles, makes, types, and classes. With my program, the user may search with all three criteria and sort by price or by year.
