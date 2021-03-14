@@ -8,7 +8,7 @@
         $makeVal = $_POST["select_make"];
         $query = "SELECT makeName FROM makes WHERE makeID = $makeVal";
         $test = fetch_one($query, $db);
-        echo $test;
+        echo $test[0];
         //echo "<option value = '" . $_POST["makeID"] . "'>" . $_POST["make_name"] . "</option>";
     }
     else if (!isset($_POST["select_make"]))
