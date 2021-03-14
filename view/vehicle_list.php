@@ -1,40 +1,10 @@
 <?php
     include("view/header.php");
-    echo "<h4>Im testing things right now. You might see some nonsense.</h4>";
 ?>
-
-<?php 
-    /*if (isset($_POST["select_make"]))
-    {
-        $makeVal = $_POST["select_make"];
-        $query = "SELECT makeName FROM makes WHERE makeID = $makeVal";
-        $test = fetch_one($query, $db);
-        echo $test[0];
-        //echo "<option value = '" . $_POST["makeID"] . "'>" . $_POST["make_name"] . "</option>";
-    }
-    else if (!isset($_POST["select_make"]))
-    {
-        //echo "<option value = 'all_makes'>View All Makes</option>";
-    }*/
-?>
-
 
 <form action = "index_public.php" method = "POST">
     <select name = "select_make" class = "form-control" id = "sel">
         <option value = "all_makes">View All Makes</option>
-        <?php 
-            if (isset($_POST["select_make"]))
-            {
-                $makeVal = $_POST["select_make"];
-                $query = "SELECT makeName FROM makes WHERE makeID = $makeVal";
-                $pmake = fetch_one($query, $db);
-                echo "<option value = '" . $makeVal . "'>" . $pmake[0] . "</option>";
-            }
-            else if (!isset($_POST["select_make"]))
-            {
-                echo "<option value = 'all_makes'>View All Makes</option>";
-            }
-        ?>
         <?php
             $query = "SELECT * FROM makes ORDER BY makeID ASC";
             $makes = fetch_all($query, $db);
