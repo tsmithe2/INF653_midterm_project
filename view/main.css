@@ -36,6 +36,7 @@ footer
 }
 #scroll
 {
+    border: 2px solid black;
     height: 380px;
     overflow-y: auto;
     width: 97%;
@@ -46,7 +47,6 @@ footer
 #scroll #tab
 {
     table-layout: fixed;
-    border: 1px solid black;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
