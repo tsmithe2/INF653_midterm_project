@@ -1,5 +1,6 @@
 <?php
     include("view/header.php");
+    echo "<h4>Im testing things right now. You might see some nonsense.</h4>";
 ?>
 
 <?php 
@@ -20,6 +21,7 @@
 
 <form action = "index_public.php" method = "POST">
     <select name = "select_make" class = "form-control" id = "sel">
+        <option value = "all_makes">View All Makes</option>
         <?php 
             if (isset($_POST["select_make"]))
             {
@@ -33,7 +35,6 @@
                 echo "<option value = 'all_makes'>View All Makes</option>";
             }
         ?>
-        <!-- <option value = "all_makes">View All Makes</option> -->
         <?php
             $query = "SELECT * FROM makes ORDER BY makeID ASC";
             $makes = fetch_all($query, $db);
