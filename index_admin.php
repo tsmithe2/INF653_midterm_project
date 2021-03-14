@@ -14,6 +14,8 @@
     if (isset($_POST["vehicle_added"]))
     {
         add_vehicle($_POST["vehicle_year"], $_POST["make_id"], $_POST["vehicle_model"], $_POST["type_id"], $_POST["class_id"], $_POST["vehicle_price"]);
+        include("view/add_vehicle_form.php");
+        $busy = true;
     }
     if (isset($_POST["delete_vehicle"]))
     {
