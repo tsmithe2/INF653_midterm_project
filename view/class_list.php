@@ -6,27 +6,29 @@
     <h4>Vehicle Class List</h4>
 </div>
 
-<table class = "table table-hover" id = "tab">
-    <tr>
-        <th colspan = "2">Name</th>
-    </tr>
-    <?php
-        $query = "SELECT * FROM classes ORDER BY classID";
-        $classes = fetch_all($query, $db);
-        $counter = 1;
-        foreach ($classes as $class) :
-            echo "<form action = 'index_admin.php' method = 'POST'>";
-            echo "<input type = 'hidden' name = 'del' value = " . $class["classID"] . " />";
-            echo "<tr>";
-            echo "<td>" . $class["className"] . "</td>";
-            echo "<td><input type = 'submit' name = 'delete_class' value = 'Remove' class = 'btn btn-danger' /></td>";
-            echo "</tr></form>";
-        endforeach;
+<div id = "scroll">
+    <table class = "table table-hover" id = "tab">
+        <tr>
+            <th colspan = "2">Name</th>
+        </tr>
+        <?php
+            $query = "SELECT * FROM classes ORDER BY classID";
+            $classes = fetch_all($query, $db);
+            $counter = 1;
+            foreach ($classes as $class) :
+                echo "<form action = 'index_admin.php' method = 'POST'>";
+                echo "<input type = 'hidden' name = 'del' value = " . $class["classID"] . " />";
+                echo "<tr>";
+                echo "<td>" . $class["className"] . "</td>";
+                echo "<td><input type = 'submit' name = 'delete_class' value = 'Remove' class = 'btn btn-danger' /></td>";
+                echo "</tr></form>";
+            endforeach;
 
-        $query = "ALTER TABLE classes AUTO_INCREMENT = $counter";
-        fetch_one($query, $db);
-    ?>
-</table>
+            $query = "ALTER TABLE classes AUTO_INCREMENT = $counter";
+            fetch_one($query, $db);
+        ?>
+    </table>
+</div>
 
 <div id = "nput_form">
     <h4>Add Vehicle Class</h4>

@@ -6,27 +6,29 @@
     <h4>Vehicle Make List</h4>
 </div>
 
-<table class = "table table-hover" id = "tab">
-    <tr>
-        <th colspan = "2">Name</th>
-    </tr>
-    <?php
-        $query = "SELECT * FROM makes ORDER BY makeID";
-        $makes = fetch_all($query, $db);
-        $counter = 1;
-        foreach ($makes as $make) :
-            echo "<form action = 'index_admin.php' method = 'POST'>";
-            echo "<input type = 'hidden' name = 'del' value = " . $make["makeID"] . " />";
-            echo "<tr>";
-            echo "<td>" . $make["makeName"] . "</td>";
-            echo "<td><input type = 'submit' name = 'delete_make' value = 'Remove' class = 'btn btn-danger' /></td>";
-            echo "</tr></form>";
-        endforeach;
+<div id = "scroll">
+    <table class = "table table-hover" id = "tab">
+        <tr>
+            <th colspan = "2">Name</th>
+        </tr>
+        <?php
+            $query = "SELECT * FROM makes ORDER BY makeID";
+            $makes = fetch_all($query, $db);
+            $counter = 1;
+            foreach ($makes as $make) :
+                echo "<form action = 'index_admin.php' method = 'POST'>";
+                echo "<input type = 'hidden' name = 'del' value = " . $make["makeID"] . " />";
+                echo "<tr>";
+                echo "<td>" . $make["makeName"] . "</td>";
+                echo "<td><input type = 'submit' name = 'delete_make' value = 'Remove' class = 'btn btn-danger' /></td>";
+                echo "</tr></form>";
+            endforeach;
 
-        $query = "ALTER TABLE makes AUTO_INCREMENT = $counter";
-        fetch_one($query, $db);
-    ?>
-</table>
+            $query = "ALTER TABLE makes AUTO_INCREMENT = $counter";
+            fetch_one($query, $db);
+        ?>
+    </table>
+</div>
 
 <div id = "nput_form">
     <h4>Add Vehicle Make</h4>
