@@ -37,7 +37,7 @@ footer
 #scroll
 {
     border: 2px solid black;
-    height: 450px;
+    height: 440px;
     overflow-y: auto;
     width: 97%;
     margin-left: auto;
