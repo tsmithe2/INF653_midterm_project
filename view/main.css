@@ -36,7 +36,7 @@ footer
 }
 #scroll
 {
-    height: 450px;
+    height: 300px;
     overflow-y: auto;
 }
 #scroll #tab
