@@ -5,7 +5,10 @@
 <?php 
     if (isset($_POST["select_make"]))
     {
-        echo $_POST["select_make"];
+        $makeVal = $_POST["select_make"];
+        $query = "SELECT makeName FROM makes WHERE makeID = $makeVal";
+        $test = fetch_one($query, $db);
+        echo $test;
         //echo "<option value = '" . $_POST["makeID"] . "'>" . $_POST["make_name"] . "</option>";
     }
     else if (!isset($_POST["select_make"]))
