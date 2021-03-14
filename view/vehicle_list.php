@@ -2,10 +2,23 @@
     include("view/header.php");
 ?>
 
+<?php 
+    if (isset($_POST["select_make"]))
+    {
+        echo $_POST["select_make"];
+        //echo "<option value = '" . $_POST["makeID"] . "'>" . $_POST["make_name"] . "</option>";
+    }
+    else if (!isset($_POST["select_make"]))
+    {
+        //echo "<option value = 'all_makes'>View All Makes</option>";
+    }
+?>
+
+
 <form action = "index_public.php" method = "POST">
     <select name = "select_make" class = "form-control" id = "sel">
         <?php 
-            if (isset($_POST["select_make"]))
+            /*if (isset($_POST["select_make"]))
             {
                 echo $_POST["select_make"];
                 //echo "<option value = '" . $_POST["makeID"] . "'>" . $_POST["make_name"] . "</option>";
@@ -13,7 +26,7 @@
             else if (!isset($_POST["select_make"]))
             {
                 //echo "<option value = 'all_makes'>View All Makes</option>";
-            }
+            }*/
         ?>
         <option value = "all_makes">View All Makes</option>
         <?php
