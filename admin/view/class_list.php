@@ -1,5 +1,5 @@
 <?php
-    include("view/header.php");
+    include("admin/view/header.php");
 ?>
 
 <div id = "nput_form">
