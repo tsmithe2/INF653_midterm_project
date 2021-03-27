@@ -9,5 +9,6 @@
 </head>
 <body>
     <header>
+        <a href = "register.php">Register</a>
         <h2>&nbsp;Zippy Used Autos</h2>
     </header>
