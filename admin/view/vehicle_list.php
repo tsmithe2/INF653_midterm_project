@@ -1,5 +1,5 @@
 <?php
-    include("view/header_admin.php");
+    include("view/header.php");
 ?>
 
 <form action = "index_admin.php" method = "POST">
