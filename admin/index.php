@@ -1,9 +1,9 @@
 <?php
     require("model/database.php");
-    require("controllers/vehicle_db.php");
-    require("controllers/make_db.php");
-    require("controllers/type_db.php");
-    require("controllers/class_db.php");
+    //require("admin/controllers/vehicle_db.php");
+    //require("admin/controllers/make_db.php");
+    //require("admin/controllers/type_db.php");
+    //require("admin/controllers/class_db.php");
 
     /*$busy = false;
 
