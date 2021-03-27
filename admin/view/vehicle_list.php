@@ -2,7 +2,7 @@
     include("view/header.php");
 ?>
 
-<form action = "index_admin.php" method = "POST">
+<form action = "index.php" method = "POST">
     <select name = "select_make" class = "form-control" id = "sel">
         <option value = "all_makes">View All Makes</option>
         <?php
@@ -95,7 +95,7 @@
             $counter = 1;
 
             foreach ($results as $result) :
-                echo "<form action = 'index_admin.php' method = 'POST'>";
+                echo "<form action = 'index.php' method = 'POST'>";
                 echo "<input type = 'hidden' name = 'del' value = " . $result["vehicleID"] . " />";
                 $make_id = $result["makeID"];
                 $type_id = $result["typeID"];
@@ -132,16 +132,16 @@
 </div>
 
 <div id = "nav">
-    <form action = "index_admin.php" method = "POST">
+    <form action = "index.php" method = "POST">
         <input type = "submit" name = "add_vehicle" value = "Add a vehicle" id = "butn" class="btn btn-outline-primary" />
     </form>
-    <form action = "index_admin.php" method = "POST">
+    <form action = "index.php" method = "POST">
         <input type = "submit" name = "view_edit_makes" value = "View/Edit Vehicle Makes" id = "butn" class="btn btn-outline-primary" />
     </form>
-    <form action = "index_admin.php" method = "POST">
+    <form action = "index.php" method = "POST">
         <input type = "submit" name = "view_edit_types" value = "View/Edit Vehicle Types" id = "butn" class="btn btn-outline-primary" />
     </form>
-    <form action = "index_admin.php" method = "POST">
+    <form action = "index.php" method = "POST">
         <input type = "submit" name = "view_edit_classes" value = "View/Edit Vehicle Classes" id = "butn" class="btn btn-outline-primary" />
     </form>
 </div>
