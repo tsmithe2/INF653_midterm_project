@@ -5,7 +5,7 @@
     require("model/type_db.php");
     require("model/class_db.php");
 
-    $busy = false;
+    /*$busy = false;
 
     if (isset($_POST["add_vehicle"]))
     {
@@ -76,5 +76,5 @@
     if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy)
     {
         include("admin/view/vehicle_list.php");
-    }
+    }*/
 ?>
