@@ -1,4 +1,7 @@
 <?php
+    echo "<form action = 'index.php' method = 'POST'>";
+    echo "<input type = 'submit' name = 'reg' value = 'Register'>";
+    echo "</form>";
     include("view/header.php");
 ?>
 
