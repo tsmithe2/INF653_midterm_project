@@ -5,5 +5,9 @@
     session_start();
 
     require("model/database.php");
+    if (isset($_POST["fName"]))
+    {
+        echo $_POST["fName"];
+    }
     include("view/vehicle_list.php");
 ?>
