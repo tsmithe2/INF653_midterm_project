@@ -5,15 +5,5 @@
     session_start();
 
     require("model/database.php");
-    $busy = false;
-
-    if (isset($_POST["reg"]))
-    {
-        $busy = true;
-        include("view/register.php");
-    }
-    if (!isset($_POST["reg"]) && $busy = false)
-    {
-        include("view/vehicle_list.php");
-    }
+    include("view/vehicle_list.php");
 ?>
