@@ -10,7 +10,7 @@
 <body>
     <header>
         <form action = "index.php" method = "POST">
-            <input type = "submit" name = "reg" value = "Register">
+            <input type = "submit" name = "reg" value = "Register" />
         </form>
         <h2>&nbsp;Zippy Used Autos</h2>
     </header>
