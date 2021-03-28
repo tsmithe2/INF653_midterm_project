@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("header.php");
 ?>
 <form action = "is_registered.php" method = "GET">
