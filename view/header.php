@@ -11,7 +11,7 @@
     <header>
         <?php
             session_start();
-            if ($_SESSION["firstname"])
+            if ($_SESSION["firstname"] != "")
             {
                 echo "<a href = 'view/register.php'>Register</a>";
             }

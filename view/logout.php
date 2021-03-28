@@ -2,7 +2,7 @@
     session_start();
     include("view/header.php");
     echo "<h4>Thank you for signing out, " . $_SESSION["firstname"] . ".</h4>";
-    echo "<a href = 'view/vehicle_list.php'>Click here</a> to view our vehicle list.";
+    echo "<a href = 'vehicle_list.php'>Click here</a> to view our vehicle list.";
     include("view/footer.php");
     $_SESSION = array();
     session_destroy();
