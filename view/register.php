@@ -1,5 +1,5 @@
 <?php
-    include("view/header.php");
+    include("header.php");
 ?>
 <form action = "is_registered.php" method = "GET">
     <label for = "name">Please enter your first name:</label>
@@ -7,5 +7,5 @@
     <input type = "submit" value = "Register" />
 </form>
 <?php
-    include("view/footer.php");
+    include("footer.php");
 ?>
