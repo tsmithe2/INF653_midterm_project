@@ -9,5 +9,17 @@
 </head>
 <body>
     <header>
+        <?php
+            session_start();
+            if ($_SESSION["firstname"])
+            {
+                echo "<a href = 'view/register.php'>Register</a>";
+            }
+            else
+            {
+                echo "Welcome " . $_SESSION["firstname"] . "! (";
+                echo "<a href = 'view/logout.php'>Sign Out</a>)";
+            }
+        ?>
         <h2>&nbsp;Zippy Used Autos</h2>
     </header>
