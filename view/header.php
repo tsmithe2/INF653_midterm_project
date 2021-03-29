@@ -21,10 +21,10 @@
                 }
                 if (isset($_SESSION["firstname"]))
                 {
-                    echo "Welcome " . $_SESSION["firstname"] . "! 
-                    <form action = '../index.php' method = 'POST' id = 'reg'>
+                    echo "<div id = 'reg'>Welcome " . $_SESSION["firstname"] . "! 
+                    <form action = '../index.php' method = 'POST'>
                     <input type = 'submit' name = 'logout' value = 'Sign Out'>
-                    </form>";
+                    </form></div>";
                 }
             }
         ?>
