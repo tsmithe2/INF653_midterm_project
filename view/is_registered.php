@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION["isBusy"] = true;
     include("view/header.php");
     $_SESSION["firstname"] = $_GET["first_name"];
     echo "<h4>Thank you for registering, " . $_SESSION["firstname"] . "!</h4>";
