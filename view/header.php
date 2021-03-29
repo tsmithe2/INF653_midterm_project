@@ -13,15 +13,16 @@
             session_start();
             if (!isset($_SESSION["firstname"]))
             {
-                //echo "<a href = 'view/register.php'>Register</a>";
                 echo "<form action = '../index.php' method = 'POST'>
                 <input type = 'submit' name = 'register' value = 'Register' />
                 </form>";
             }
             else
             {
-                echo "Welcome " . $_SESSION["firstname"] . "! (";
-                echo "<a href = 'view/logout.php'>Sign Out</a>)";
+                echo "Welcome " . $_SESSION["firstname"] . "! 
+                <form action = '../index.php' method = 'POST'>
+                <input type = 'submit' name = 'logout' value = 'Sign Out'>
+                </form>";
             }
         ?>
         <h2>&nbsp;Zippy Used Autos</h2>

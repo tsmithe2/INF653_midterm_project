@@ -1,9 +1,9 @@
 <?php
     session_start();
-    include("header.php");
+    include("view/header.php");
     echo "<h4>Thank you for signing out, " . $_SESSION["firstname"] . ".</h4>";
     echo "<a href = '../index.php'>Click here</a> to view our vehicle list.";
-    include("footer.php");
+    include("view/footer.php");
     $_SESSION = array();
     session_destroy();
 
