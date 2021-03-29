@@ -17,7 +17,7 @@
                 <input type = 'submit' name = 'reg' value = 'Register' />
                 </form>";
             }
-            else
+            if (isset($_SESSION["firstname"]))
             {
                 echo "Welcome " . $_SESSION["firstname"] . "! 
                 <form action = '../index.php' method = 'POST'>
