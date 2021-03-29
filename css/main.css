@@ -23,6 +23,10 @@ header
     width: 100%;
     margin-bottom: 8px;
 }
+#reg_subm
+{
+    width: 100%;
+}
 footer
 {
     border-top: 2px solid black;
