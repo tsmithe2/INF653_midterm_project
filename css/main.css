@@ -7,6 +7,10 @@ header
     margin-top: 10px;
     margin-bottom: 10px;
 }
+header, form
+{
+    text-align: right;
+}
 footer
 {
     border-top: 2px solid black;
