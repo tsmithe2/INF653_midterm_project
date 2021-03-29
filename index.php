@@ -7,13 +7,13 @@
     require("model/database.php");
     $busy = false;
 
-    if (isset($_POST["register"]))
+    if (isset($_POST["reg"]))
     {
         include("view/register.php");
         $busy = true;
     }
 
-    if (isset($_POST["registered"]))
+    if (isset($_POST["is_reg"]))
     {
         include("view/is_registered.php");
         $busy = true;
