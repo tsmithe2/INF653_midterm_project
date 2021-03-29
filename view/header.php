@@ -22,7 +22,7 @@
                 if (isset($_SESSION["firstname"]))
                 {
                     echo "Welcome " . $_SESSION["firstname"] . "! 
-                    <form action = '../index.php' method = 'POST'>
+                    <form action = '../index.php' method = 'POST' id = 'reg'>
                     <input type = 'submit' name = 'logout' value = 'Sign Out'>
                     </form>";
                 }
