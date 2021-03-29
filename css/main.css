@@ -12,6 +12,12 @@ header
     text-align: right;
     margin-right: 2%;
 }
+#reg_form
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 footer
 {
     border-top: 2px solid black;
