@@ -5,9 +5,9 @@
     session_start();
 
     require("model/database.php");
-    if (isset($_POST["fName"]))
+    if (isset($_POST["register"]))
     {
-        echo $_POST["fName"];
+        echo "yoasjaidjoiwdj";
     }
     include("view/vehicle_list.php");
 ?>
