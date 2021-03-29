@@ -16,7 +16,7 @@
                 if (!isset($_SESSION["firstname"]))
                 {
                     echo "<form action = '../index.php' method = 'POST' id = 'reg'>
-                    <input type = 'submit' name = 'reg' value = 'Register' />
+                    <input type = 'submit' name = 'reg' value = 'Register' class = 'btn btn-outline-primary' />
                     </form>";
                 }
                 if (isset($_SESSION["firstname"]))
