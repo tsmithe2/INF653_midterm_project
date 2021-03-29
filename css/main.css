@@ -18,6 +18,10 @@ header
     margin-left: auto;
     margin-right: auto;
 }
+#reg_name
+{
+    width: 100%;
+}
 footer
 {
     border-top: 2px solid black;
