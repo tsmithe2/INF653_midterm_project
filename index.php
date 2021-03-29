@@ -5,9 +5,28 @@
     session_start();
 
     require("model/database.php");
+    $busy = false;
+
     if (isset($_POST["register"]))
     {
-        echo "yoasjaidjoiwdj";
+        include("view/register.php");
+        $busy = true;
     }
-    include("view/vehicle_list.php");
+
+    if (isset($_POST["registered"]))
+    {
+        include("view/is_registered.php");
+        $busy = true;
+    }
+
+    if (isset($_POST["logout"]))
+    {
+        include("view/logout.php");
+        $busy = true;
+    }
+
+    if (!isset($_POST["register"]) && !isset($_POST["registered"]) && !isset($_POST["logout"]) && $busy == false)
+    {
+        include("view/vehicle_list.php");
+    }
 ?>
