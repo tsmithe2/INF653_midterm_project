@@ -15,7 +15,7 @@
             {
                 if (!isset($_SESSION["firstname"]))
                 {
-                    echo "<form action = '../index.php' method = 'POST'>
+                    echo "<form action = '../index.php' method = 'POST' id = 'reg'>
                     <input type = 'submit' name = 'reg' value = 'Register' />
                     </form>";
                 }
