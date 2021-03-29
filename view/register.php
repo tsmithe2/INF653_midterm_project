@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION["isBusy"] = true;
     include("header.php");
 ?>
 <form action = "../index.php" method = "GET">

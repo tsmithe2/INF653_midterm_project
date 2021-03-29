@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION["isBusy"] = true;
     include("view/header.php");
     echo "<h4>Thank you for signing out, " . $_SESSION["firstname"] . ".</h4>";
     echo "<a href = '../index.php'>Click here</a> to view our vehicle list.";

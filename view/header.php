@@ -11,18 +11,21 @@
     <header>
         <?php
             session_start();
-            if (!isset($_SESSION["firstname"]))
+            if ($_SESSION["isBusy"] == false)
             {
-                echo "<form action = '../index.php' method = 'POST'>
-                <input type = 'submit' name = 'reg' value = 'Register' />
-                </form>";
-            }
-            if (isset($_SESSION["firstname"]))
-            {
-                echo "Welcome " . $_SESSION["firstname"] . "! 
-                <form action = '../index.php' method = 'POST'>
-                <input type = 'submit' name = 'logout' value = 'Sign Out'>
-                </form>";
+                if (!isset($_SESSION["firstname"]))
+                {
+                    echo "<form action = '../index.php' method = 'POST'>
+                    <input type = 'submit' name = 'reg' value = 'Register' />
+                    </form>";
+                }
+                if (isset($_SESSION["firstname"]))
+                {
+                    echo "Welcome " . $_SESSION["firstname"] . "! 
+                    <form action = '../index.php' method = 'POST'>
+                    <input type = 'submit' name = 'logout' value = 'Sign Out'>
+                    </form>";
+                }
             }
         ?>
         <h2>&nbsp;Zippy Used Autos</h2>

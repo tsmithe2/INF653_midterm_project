@@ -3,6 +3,7 @@
     $lifetime = 60 * 60 * 24 * 14; // 2 weeks in seconds 
     session_set_cookie_params($lifetime, '/'); 
     session_start();
+    $_SESSION["isBusy"] = false;
 
     require("model/database.php");
     $busy = false;
