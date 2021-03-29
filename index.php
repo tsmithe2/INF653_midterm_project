@@ -15,6 +15,7 @@
 
     if (isset($_POST["is_reg"]))
     {
+        echo "yo";
         include("view/is_registered.php");
         $busy = true;
     }
