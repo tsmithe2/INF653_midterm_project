@@ -1,9 +1,5 @@
 <?php
     include("view/header.php");
-    if (isset($_POST["is_reg"]))
-    {
-        echo "yo";
-    }
 ?>
 
 <form action = "index_public.php" method = "POST">

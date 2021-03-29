@@ -13,9 +13,8 @@
         $busy = true;
     }
 
-    if (isset($_POST["is_reg"]))
+    if (isset($_GET["is_reg"]))
     {
-        echo "yo";
         include("view/is_registered.php");
         $busy = true;
     }
