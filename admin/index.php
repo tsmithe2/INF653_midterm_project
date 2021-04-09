@@ -21,9 +21,9 @@
     $query = "SELECT username FROM administrators WHERE username = '" . $username . "'";
     $result = fetch_all($query, $db);
 
-    if ($result == "")
+    if ($result != $username)
     {
-        echo "invalid login";
+        include("controllers/admin.php");
     }
 
     if (isset($_POST["add_vehicle"]))
