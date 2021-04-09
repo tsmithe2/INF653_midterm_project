@@ -12,7 +12,7 @@
     $confirm_password = $_POST["confirm_password"];
 
     $query = "SELECT * FROM administrators";
-    $result = fetch_one($query);
+    $result = fetch_all($query);
     
     if ($result == "")
     {
