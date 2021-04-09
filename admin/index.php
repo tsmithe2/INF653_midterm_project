@@ -11,7 +11,7 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    $query = "SELECT username FROM administrators";
+    $query = "SELECT ID FROM administrators WHERE ID = 1";
     $result = fetch_all($query);
     
     if ($result == "")
