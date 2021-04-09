@@ -11,9 +11,9 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    //$query = "SELECT * FROM administrators";
-    //$result = fetch_one($query);
-
+    $query = "SELECT * FROM administrators";
+    $result = fetch_one($query);
+    
     if ($result == "")
     {
         include("controllers/admin.php");
