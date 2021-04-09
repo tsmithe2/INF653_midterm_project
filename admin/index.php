@@ -6,6 +6,7 @@
     require("controllers/type_db.php");
     require("controllers/class_db.php");
 
+    global $db;
     $busy = false;
     $username = $_POST["username"];
     $password = $_POST["password"];
