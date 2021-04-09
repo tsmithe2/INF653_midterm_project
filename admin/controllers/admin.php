@@ -1,3 +1,3 @@
 <?php
-    echo("yo");
+    include("../view/login.php");
 ?>
