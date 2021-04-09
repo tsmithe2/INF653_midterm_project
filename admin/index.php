@@ -11,6 +11,7 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
+    global $db;
     $query = "SELECT makeID FROM makes WHERE makeID = 1";
     $result = fetch_all($query);
     
