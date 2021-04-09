@@ -14,6 +14,7 @@
     global $db;
     $query = "SELECT makeID FROM makes WHERE makeID = 1";
     $result = fetch_one($query);
+    echo $result;
     
     if ($result == "")
     {
