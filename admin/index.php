@@ -11,12 +11,18 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    echo $username;
-
-    if (!isset($username) && !isset($password) && !isset($confirm_password))
+    if (!isset($username) && !isset($password))
     {
         include("controllers/admin.php");
         $busy = true;
+    }
+
+    $query = "SELECT username FROM administrators WHERE username = $username";
+    $result = fetch_one($query, $db);
+
+    if ($result == "")
+    {
+        echo "invalid login";
     }
 
     if (isset($_POST["add_vehicle"]))
