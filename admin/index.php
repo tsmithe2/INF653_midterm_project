@@ -14,7 +14,7 @@
     $query = "SELECT username FROM administrators WHERE username = '" . $username . "'";
     $result = fetch_one($query);
 
-    if ($result != "")
+    if ($result == "")
     {
         include("controllers/admin.php");
         $busy = true;
