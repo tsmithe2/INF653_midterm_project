@@ -18,7 +18,7 @@
         $busy = true;
     }
 
-    $query = "SELECT username FROM administrators WHERE username = $username";
+    $query = "SELECT username FROM administrators WHERE username = '" . $username . "'";
     $result = fetch_all($query, $db);
 
     if ($result == "")
