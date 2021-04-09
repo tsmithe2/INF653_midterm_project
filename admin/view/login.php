@@ -9,9 +9,9 @@
         <input type = "text" name = "username" id = "nput" class = "form-control" required><br>
 
         <label for = "password">Password:</label><br>
-        <input type = "password" name = "password" id = "nput" class = "form-control" required><br><br>
+        <input type = "password" name = "password" id = "nput" class = "form-control" required><br>
 
-        <input type = "submit" value = "Sign in" id = "butn" class="btn btn-outline-primary">
+        <input type = "submit" value = "Sign in" id = "nput_s" class="btn btn-outline-primary">
     </form>
 </div>
 
