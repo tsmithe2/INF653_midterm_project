@@ -11,6 +11,8 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
+    echo $username;
+
     if (!isset($username) && !isset($password) && !isset($confirm_password))
     {
         include("controllers/admin.php");
