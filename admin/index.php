@@ -1,11 +1,20 @@
 <?php
     require("../model/database.php");
+    require("../model/admin_db.php");
     require("controllers/vehicle_db.php");
     require("controllers/make_db.php");
     require("controllers/type_db.php");
     require("controllers/class_db.php");
 
     $busy = false;
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $confirm_password = $_POST["confirm_password"];
+
+    if (!isset($username) && !isset($password) && !isset($confirm_password))
+    {
+        include("controllers/admin.php");
+    }
 
     if (isset($_POST["add_vehicle"]))
     {
