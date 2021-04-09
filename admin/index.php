@@ -11,7 +11,10 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    if (!isset($username) && !isset($password) && !isset($confirm_password))
+    $query = "SELECT (username, password) FROM administrators WHERE (username = $username AND password = $password)";
+    $result = fetch_one($query);
+
+    if ($result != "")
     {
         include("controllers/admin.php");
         $busy = true;
