@@ -14,6 +14,7 @@
     if (!isset($username) && !isset($password) && !isset($confirm_password))
     {
         include("controllers/admin.php");
+        $busy = true;
     }
 
     if (isset($_POST["add_vehicle"]))
