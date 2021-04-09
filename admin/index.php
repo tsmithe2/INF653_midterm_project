@@ -13,8 +13,8 @@
 
     if (!isset($username) && !isset($password) && !isset($confirm_password))
     {
-        include("controllers/admin.php");
-        $busy = true;
+        header("Location: https://inf653midtermproject1.herokuapp.com/admin/controllers/admin.php");
+        exit;
     }
 
     if (isset($_POST["add_vehicle"]))
