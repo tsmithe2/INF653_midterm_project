@@ -1,3 +1,4 @@
 <?php
-    echo("login here, yo.");
+    include("header.php");
+    include("footer.php");
 ?>
