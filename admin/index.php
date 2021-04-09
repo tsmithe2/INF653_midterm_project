@@ -24,6 +24,7 @@
     if ($result != $username)
     {
         include("controllers/admin.php");
+        $busy = true;
     }
 
     if (isset($_POST["add_vehicle"]))
