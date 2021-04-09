@@ -11,12 +11,7 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    global $db;
-    $query = "SELECT makeID FROM makes WHERE makeID = 1";
-    $result = fetch_one($query);
-    echo $result;
-    
-    if ($result == "")
+    if (!isset($username) && !isset($password) && !isset($confirm_password))
     {
         include("controllers/admin.php");
         $busy = true;
