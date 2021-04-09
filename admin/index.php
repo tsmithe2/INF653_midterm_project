@@ -19,7 +19,7 @@
     }
 
     $query = "SELECT username FROM administrators WHERE username = $username";
-    $result = fetch_one($query, $db);
+    $result = fetch_all($query, $db);
 
     if ($result == "")
     {
