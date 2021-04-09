@@ -11,8 +11,8 @@
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    $query = "SELECT username FROM administrators WHERE username = '" . Zippy123 . "'";
-    $result = fetch_one($query);
+    $query = "SELECT username FROM administrators";
+    $result = fetch_all($query);
     
     if ($result == "")
     {
