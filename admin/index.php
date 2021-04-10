@@ -26,7 +26,7 @@
     }
 
     $query = "SELECT username, password FROM Accounts WHERE username = '" . $username . "' and password = '" . $password . "'";
-    $result = fetch_all($query, $db);
+    $result = fetch_one($query, $db);
 
     echo $result;
 
