@@ -28,7 +28,9 @@
     $query = "SELECT username, password FROM Accounts WHERE username = '" . $username . "' and password = '" . $password . "'";
     $result = fetch_one($query, $db);
 
-    echo $result["username"];
+    echo $result;
+    echo $result[0];
+    echo $result[1];
 
     if ($result["username"] == $username)
     {
