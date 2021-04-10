@@ -25,11 +25,10 @@
         $busy = true;
     }
 
-    $query = "SELECT username FROM administrators WHERE username = '" . $username . "'";
+    $query = "SELECT username, password FROM Accounts WHERE username = '" . $username . "' and password = '" . $password . "'";
     $result = fetch_one($query, $db);
-    echo $result;
 
-    if (!$result)
+    if ($result["username"] == $username)
     {
         include("controllers/admin.php");
         $busy = true;
