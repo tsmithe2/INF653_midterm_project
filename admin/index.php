@@ -26,8 +26,8 @@
     }
 
     $query = "SELECT username FROM administrators WHERE username = '" . $username . "'";
-    $result = fetch_all($query, $db);
-    echo $result[0];
+    $result = fetch_one($query, $db);
+    echo $result;
 
     if ($result != $username)
     {
