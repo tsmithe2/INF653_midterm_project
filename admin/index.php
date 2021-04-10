@@ -30,7 +30,7 @@
 
     if ($result != $username)
     {
-        echo $result["username"];
+        echo $result[0];
         include("controllers/admin.php");
         $busy = true;
     }
