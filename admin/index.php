@@ -29,7 +29,7 @@
     $result = fetch_one($query, $db);
     echo $result;
 
-    if ($result == NULL)
+    if (!$result)
     {
         include("controllers/admin.php");
         $busy = true;
