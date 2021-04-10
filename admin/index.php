@@ -6,6 +6,13 @@
     require("controllers/type_db.php");
     require("controllers/class_db.php");
 
+    /**
+    // Start session management with a persistent cookie 
+    $lifetime = 60 * 60 * 24 * 14; // 2 weeks in seconds 
+    session_set_cookie_params($lifetime, '/'); 
+    session_start();
+    */
+
     global $db;
     $busy = false;
     $username = $_POST["username"];
@@ -23,6 +30,7 @@
 
     if ($result != $username)
     {
+        echo $result;
         include("controllers/admin.php");
         $busy = true;
     }
