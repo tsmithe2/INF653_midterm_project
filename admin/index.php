@@ -28,9 +28,9 @@
     $query = "SELECT username FROM administrators WHERE username = '" . $username . "'";
     $result = fetch_all($query, $db);
 
-    if ($result != $username)
+    if ($result == $username)
     {
-        echo $result[0];
+        echo "yo!";
         include("controllers/admin.php");
         $busy = true;
     }
