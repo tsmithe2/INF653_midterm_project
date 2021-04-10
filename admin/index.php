@@ -29,8 +29,6 @@
     $result = fetch_one($query, $db);
 
     echo $result;
-    echo $result[0];
-    echo $result[1];
 
     /**
     if ($result["username"] == $username)
