@@ -32,12 +32,14 @@
     echo $result[0];
     echo $result[1];
 
+    /**
     if ($result["username"] == $username)
     {
 
         //include("controllers/admin.php");
         //$busy = true;
     }
+    */
 
     if (isset($_POST["add_vehicle"]))
     {
