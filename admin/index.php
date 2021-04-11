@@ -26,9 +26,9 @@
     }
 
     $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
-    $result = fetch_one($query, $db);
+    $result = fetch_all($query, $db);
 
-    if ($result[0] != $username)
+    if ($result["username"] != $username)
     {
         include("controllers/admin.php");
         $busy = true;
