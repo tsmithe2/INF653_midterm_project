@@ -31,11 +31,7 @@
     $query = "SELECT * FROM administrators";
     $result = fetch_all($query, $db);
 
-    foreach ($result as $r) :
-        echo "yo";
-        //echo $r["username"];
-    endforeach;
-    echo ":O";
+    echo $result["username"];
 
     /**
     if (isset($_POST["add_vehicle"]))
