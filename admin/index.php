@@ -33,8 +33,9 @@
 
     foreach ($result as $r) :
         echo "yo";
-        echo $r["username"];
+        //echo $r["username"];
     endforeach;
+    echo ":O";
 
     /**
     if (isset($_POST["add_vehicle"]))
