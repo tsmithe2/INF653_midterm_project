@@ -28,16 +28,11 @@
     $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
     $result = fetch_one($query, $db);
 
-    echo $result["username"];
-
-    /**
-    if ($result["username"] == $username)
+    if ($result["username"] != $username)
     {
-
-        //include("controllers/admin.php");
-        //$busy = true;
+        include("controllers/admin.php");
+        $busy = true;
     }
-    */
 
     if (isset($_POST["add_vehicle"]))
     {
