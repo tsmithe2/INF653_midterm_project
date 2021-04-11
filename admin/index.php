@@ -32,7 +32,7 @@
     $result = fetch_all($query, $db);
 
     echo $result;
-    echo $result[0];
+    echo $result["username"];
 
     /**
     if (isset($_POST["add_vehicle"]))
