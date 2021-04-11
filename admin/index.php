@@ -36,6 +36,7 @@
         echo $r["username"];
     endforeach;
 
+    /**
     if (isset($_POST["add_vehicle"]))
     {
         include("view/add_vehicle_form.php");
@@ -113,5 +114,5 @@
     if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy)
     {
         include("view/vehicle_list.php");
-    }
+    }*/
 ?>
