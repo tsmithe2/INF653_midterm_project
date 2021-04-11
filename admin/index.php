@@ -25,15 +25,13 @@
         $busy = true;
     }
 
-    //$query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
-    //$result = fetch_all($query, $db);
+    $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
+    $result = fetch_one($query, $db);
 
-    $query = "SELECT * FROM administrators";
-    $result = fetch_all($query, $db);
-
-    echo $result;
-    echo $result["username"];
-
+    if($result["username"] == $username)
+    {
+        echo "correct username";
+    }
     /**
     if (isset($_POST["add_vehicle"]))
     {
