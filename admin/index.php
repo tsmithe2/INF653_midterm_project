@@ -25,19 +25,15 @@
         $busy = true;
     }
 
-    $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
+    //$query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
+    //$result = fetch_all($query, $db);
+
+    $query = "SELECT * FROM administrators";
     $result = fetch_all($query, $db);
 
     foreach ($result as $r) :
         echo $r["username"];
     endforeach;
-
-    if ($result["username"] != $username)
-    {
-        echo("<h1>" . $result["username"] . "</h1>");
-        include("controllers/admin.php");
-        $busy = true;
-    }
 
     if (isset($_POST["add_vehicle"]))
     {
