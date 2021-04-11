@@ -32,6 +32,7 @@
     $result = fetch_all($query, $db);
 
     foreach ($result as $r) :
+        echo "yo";
         echo $r["username"];
     endforeach;
 
