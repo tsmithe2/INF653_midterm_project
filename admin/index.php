@@ -21,7 +21,6 @@
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
-        $busy = true;
     }
 
     if (isset($_POST["username"]) && isset($_POST["password"]))
@@ -36,7 +35,6 @@
     {
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
-        $busy = true;
     }
 
     if (isset($_POST["add_vehicle"]))
@@ -113,7 +111,7 @@
         $busy = true;
     }
 
-    if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy)
+    if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy && $_SESSION["is_logged_in"] == true)
     {
         include("view/vehicle_list.php");
     }
