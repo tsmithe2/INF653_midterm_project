@@ -20,7 +20,7 @@
             }
             else
             {
-                echo "is_logged_is is false";
+                echo "is_logged_in is false";
             }
         ?>
         <h2>&nbsp;Zippy Admin</h2>
