@@ -36,6 +36,7 @@
     {
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
+        $busy = true;
     }
 
     if (isset($_POST["add_vehicle"]))
