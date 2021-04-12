@@ -43,9 +43,12 @@
         $tnp = $_SESSION["temp_new_password"];
         $cp = $_SESSION["confirm_password"];
         
-        if (valid_username($tnu))
+        for ($i = 0; $i < strlen($tnu); $i++)
         {
-            echo "Valid username";
+            if (IntlChar::isupper($tnu[$i]))
+            {
+                echo "uppercase";
+            }
         }
     }
 ?>
