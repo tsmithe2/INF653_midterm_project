@@ -16,6 +16,7 @@
 
     $busy = false;
     $_SESSION["action"] = "";
+    echo "yo " . $_SESSION["username"];
 
     if (!isset($_POST["username"]) && !isset($_POST["password"]) && !isset($_SESSION["username"]))
     {
