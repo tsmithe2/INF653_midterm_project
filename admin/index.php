@@ -43,6 +43,7 @@
     {
         $_SESSION["action"] = "show_register";
         include("controllers/admin.php");
+        $busy = true;
     }
 
     if (isset($_POST["register_new_admin"]))
