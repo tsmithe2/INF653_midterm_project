@@ -16,10 +16,6 @@
             $_SESSION["password"] = $_POST["password"];
             $_SESSION["is_logged_in"] = true;
         }
-        else
-        {
-            $_SESSION["is_logged_in"] = false;
-        }
     }
     if ($_SESSION["action"] == "logout")
     {
