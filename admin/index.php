@@ -19,7 +19,6 @@
 
     if (!isset($_POST["username"]) && !isset($_POST["password"]) && !isset($_SESSION["username"]))
     {
-        $_SESSION["is_logged_in"] = false;
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
         $busy = true;

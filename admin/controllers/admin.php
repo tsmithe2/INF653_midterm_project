@@ -14,8 +14,6 @@
         {
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
-            $_SESSION["is_logged_in"] = true;
-            echo "is_logged_in is true";
         }
     }
     if ($_SESSION["action"] == "logout")
