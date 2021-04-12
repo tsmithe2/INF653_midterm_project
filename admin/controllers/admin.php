@@ -3,6 +3,7 @@
     if ($_SESSION["action"] == "show_login")
     {
         include("view/login.php");
+        exit;
     }
     if ($_SESSION["action"] == "login")
     {

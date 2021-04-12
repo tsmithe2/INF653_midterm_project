@@ -16,7 +16,7 @@
 
     $busy = false;
 
-    if (!isset($_SESSION["username"]))
+    if (!isset($_SESSION["is_logged_in"]))
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
