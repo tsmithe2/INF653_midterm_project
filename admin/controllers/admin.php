@@ -53,6 +53,7 @@
         }
         else
         {
+            echo "valid username";
             $valid_username = true;
         }
 
@@ -64,15 +65,17 @@
         else
         {
             $valid_password = true;
+            echo "<br>valid password";
         }
 
         if ($tnp === $cp)
         {
             echo "<br>passwords match";
+            $passwords_match = true;
         }
         else
         {
-            $passwords_match = true;
+            echo "<br>passwords don't match";
         }
 
         if ($valid_username && $valid_password && $passwords_match)
