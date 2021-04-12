@@ -16,6 +16,7 @@
 
     $busy = false;
     $_SESSION["action"] = "";
+    $_SESSION["is_logged_in"] = false;
 
     if (!isset($_POST["username"]) && !isset($_POST["password"]) && $_SESSION["is_logged_in"] == false)
     {
@@ -24,13 +25,12 @@
         $busy = true;
     }
 
-    if (isset($_POST["username"]) && isset($_POST["password"])) //might need force a refresh here
+    if (isset($_POST["username"]) && isset($_POST["password"]))
     {
         $_SESSION["action"] = "login";
         $_SESSION["temp_username"] = $_POST["username"];
         $_SESSION["temp_password"] = $_POST["password"];
         include("controllers/admin.php");
-        //$busy = true;
     }
 
     if (isset($_POST["logout"]))
@@ -38,7 +38,6 @@
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
         $busy = true;
-        $_SESSION["is_logged_in"] = false;
     }
 
     if (isset($_POST["add_vehicle"]))
