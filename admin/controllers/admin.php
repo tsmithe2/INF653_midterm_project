@@ -16,10 +16,12 @@
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
             $_SESSION["is_logged_in"] = true;
+            echo "VALID";
         }
         else
         {
             $_SESSION["is_logged_in"] = false;
+            echo "INVALID";
         }
     }
     if ($_SESSION["action"] == "logout")

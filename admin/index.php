@@ -17,19 +17,19 @@
     $busy = false;
     $_SESSION["action"] = "";
 
+    if ($_SESSION["is_logged_in"] == false || !isset($_SESSION["is_logged_in"]))
+    {
+        $_SESSION["action"] = "show_login";
+        include("controllers/admin.php");
+        $busy = true;
+    }
+
     if (isset($_POST["username"]) && isset($_POST["password"]))
     {
         $_SESSION["action"] = "login";
         $_SESSION["temp_username"] = $_POST["username"];
         $_SESSION["temp_password"] = $_POST["password"];
         include("controllers/admin.php");
-    }
-    
-    if ($_SESSION["is_logged_in"] == false || !isset($_SESSION["is_logged_in"]))
-    {
-        $_SESSION["action"] = "show_login";
-        include("controllers/admin.php");
-        $busy = true;
     }
 
     if (isset($_POST["logout"]))
