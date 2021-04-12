@@ -15,10 +15,6 @@
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
         }
-        else
-        {
-            echo "INVALID";
-        }
     }
     if ($_SESSION["action"] == "logout")
     {
