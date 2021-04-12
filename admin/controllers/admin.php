@@ -53,5 +53,10 @@
         {
             echo "<br>bad password";
         }
+
+        if ($tnp === $cp)
+        {
+            echo "<br>passwords match";
+        }
     }
 ?>
