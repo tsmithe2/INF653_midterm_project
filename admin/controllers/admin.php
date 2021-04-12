@@ -39,10 +39,13 @@
     if ($_SESSION["action"] == "register")
     {
         global $db;
-        $errors = valid_registration($_SESSION["temp_new_user"], $_SESSION["temp_new_password"], $_SESSION["confirm_password"]);
-        if (sizeof($errors) > 0 )
+        $tnu = $_SESSION["temp_new_user"];
+        $tnp = $_SESSION["temp_new_password"];
+        $cp = $_SESSION["confirm_password"];
+        
+        if (valid_username($tnu))
         {
-            echo "yo";
+            echo "Valid username";
         }
     }
 ?>

@@ -15,7 +15,7 @@
             {
                 echo "<div id = 'reg'>Welcome, " . $_SESSION["username"] . "!";
                 echo "<form action = 'index.php' method = 'POST'>
-                <input type = 'submit' name = 'logout' value = 'logout' />
+                <input type = 'submit' name = 'logout' value = 'logout' class = 'btn btn-outline-primary' />
                 </form></div>";
             }
         ?>

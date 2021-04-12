@@ -5,6 +5,18 @@
 <div id = "nput_form">
     <h4>Register a new admin user</h4>
 
+    <?php
+        if ($_SESSION["username_error"] == true)
+        {
+            echo "<h5 style = 'color: red'>Username must be six characters or longer</h5>";
+        }
+        if ($_SESSION["password_error"] == true)
+        {
+            echo "<h5 style = 'color: red'>Your password must contain at least one number, one uppercase letter, one lowercase letter,
+             and total 8 or more characters</h5>";
+        }
+    ?>
+
     <form action = "index.php" method = "POST">
         <label for = "new_username">Username:</label><br>
         <input type = "text" name = "new_username" id = "nput" class = "form-control" required />
