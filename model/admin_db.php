@@ -15,7 +15,6 @@ function add_admin($username, $password)
 
 function is_valid_admin_login($username, $password) 
 { 
-    echo "yo!";
     global $db;
     $query = 'SELECT password FROM administrators WHERE username = :username'; 
     $statement = $db->prepare($query); 

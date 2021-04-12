@@ -6,6 +6,7 @@
     }
     if ($_SESSION["action"] == "login")
     {
+        echo "status: " . is_valid_admin_login($_SESSION["temp_username"], $_SESSION["temp_password"]);
         if (is_valid_admin_login($_SESSION["temp_username"], $_SESSION["temp_password"]))
         {
             $_SESSION["username"] = $_POST["username"];
