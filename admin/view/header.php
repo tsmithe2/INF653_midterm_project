@@ -11,7 +11,7 @@
     <header>
         <?php
             session_start();
-            if (isset($_SESSION["username"]))
+            if ($_SESSION["is_logged_in"] == true)
             {
                 echo "<div id = 'reg'>Welcome, " . $_SESSION["username"] . "!";
                 echo "<form action = 'index.php' method = 'POST'>

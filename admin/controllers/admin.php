@@ -15,7 +15,7 @@
         {
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
-            echo "VALID";
+            $_SESSION["is_logged_in"] = true;
         }
     }
     if ($_SESSION["action"] == "logout")
