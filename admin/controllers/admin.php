@@ -49,7 +49,7 @@
         }
 
         $pattern = '/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/';
-        if (preg_match($pattern, $password) == false)
+        if (preg_match($pattern, $tnp) == false)
         {
             echo "<br>bad password";
         }
