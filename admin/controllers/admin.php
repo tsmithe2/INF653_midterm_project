@@ -7,7 +7,7 @@
     if ($_SESSION["action"] == "login")
     {
         global $db;
-        $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
+        $query = "SELECT username, password FROM administrators WHERE username = '" . $_SESSION["temp_username"] . "' and password = '" . $_SESSION["temp_password"] . "'";
         $result = fetch_one($query, $db);
         echo $_SESSION["temp_username"];
         echo $_result["username"];
