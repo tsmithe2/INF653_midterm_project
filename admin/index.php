@@ -39,6 +39,21 @@
         include("controllers/admin.php");
     }
 
+    if (isset($_POST["register"]))
+    {
+        $_SESSION["action"] = "show_register";
+        include("controllers/admin.php");
+    }
+
+    if (isset($_POST["register_new_admin"]))
+    {
+        $_SESSION["action"] = "register";
+        $_SESSION["temp_new_user"] = $_POST["new_username"];
+        $_SESSION["temp_new_password"] = $_POST["new_password"];
+        $_SESSION["confirm_password"] = $_POST["confirm_password"];
+        include("controllers/admin.php");
+    }
+
     if (isset($_POST["add_vehicle"]))
     {
         include("view/add_vehicle_form.php");

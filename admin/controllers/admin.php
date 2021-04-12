@@ -39,11 +39,13 @@
     if ($_SESSION["action"] == "register")
     {
         global $db;
-        if ($_POST["confirm_passowrd"] == $_POST["password"])
+        $errors = valid_registration($_SESSION["temp_new_user"], $_SESSION["temp_new_password"], $_SESSION["confirm_password"]);
+        if (sizeof($errors) > 0 )
         {
-            $query = "INSERT INTO administrators (username, password) VALUES ('" . $_POST["username"] . "','" . $_POST["password"] . "')";
-            $result = fetch_one($query, $db);
+            for ($i = 0; $i < sizeof($errors); $i++)
+            {
+                echo $errors[$i];
+            }
         }
-        include("view/login.php");
     }
 ?>
