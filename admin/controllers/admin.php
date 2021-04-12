@@ -2,10 +2,7 @@
     session_start();
     if ($_SESSION["action"] == "show_login")
     {
-        if (!isset($_SESSION["is_logged_in"]))
-        {
-            include("view/login.php");
-        }
+        include("view/login.php");
     }
     if ($_SESSION["action"] == "login")
     {
