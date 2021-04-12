@@ -29,11 +29,18 @@
         $busy = true;
     }
 
-    if (isset($_POST["username"]) && isset($_POST["password"]))
+    if (isset($_POST["username"]) && isset($_POST["password"])) //might need force a refresh here
     {
         $_SESSION["action"] = "login";
         $_SESSION["temp_username"] = $_POST["username"];
         $_SESSION["temp_password"] = $_POST["password"];
+        include("controllers/admin.php");
+        $busy = true;
+    }
+
+    if (isset($_POST["logout"]))
+    {
+        $_SESSION["action"] = "logout";
         include("controllers/admin.php");
         $busy = true;
     }
