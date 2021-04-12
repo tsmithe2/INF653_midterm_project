@@ -6,8 +6,8 @@
     require("controllers/type_db.php");
     require("controllers/class_db.php");
 
-    require_once('util/secure_conn.php'); 
-    require_once('util/valid_admin.php');
+    //require_once('util/secure_conn.php'); 
+    //require_once('util/valid_admin.php');
 
     // Start session management with a persistent cookie 
     $lifetime = 60 * 60 * 24 * 14; // 2 weeks in seconds 
