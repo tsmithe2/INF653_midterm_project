@@ -12,6 +12,7 @@
 
         if ($_SESSION["temp_username"] == $result["username"] && $_SESSION["temp_password"] == $result["password"])
         {
+            echo "VALID";
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
             //include("index.php");
