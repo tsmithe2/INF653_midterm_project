@@ -47,5 +47,11 @@
         {
             echo "user is too small";
         }
+
+        $pattern = '/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/';
+        if (preg_match($pattern, $password) == false)
+        {
+            echo "<br>bad password";
+        }
     }
 ?>
