@@ -16,15 +16,24 @@
 
     global $db;
     $busy = false;
-    //$username = $_POST["username"];
-    //$password = $_POST["password"];
-    //$confirm_password = $_POST["confirm_password"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $confirm_password = $_POST["confirm_password"];
 
     $_SESSION["action"] = "";
 
-    if (!isset($_SESSION["username"]) && !isset($_SESSION["password"]))
+    if (!isset($_POST["username"]) && !isset($_POST["password"]))
     {
         $_SESSION["action"] = "show_login";
+        include("controllers/admin.php");
+        $busy = true;
+    }
+
+    if (isset($_POST["username"]) && isset($_POST["password"]))
+    {
+        $_SESSION["action"] = "login";
+        $_SESSION["temp_username"] = $_POST["username"];
+        $_SESSION["temp_password"] = $_POST["password"];
         include("controllers/admin.php");
         $busy = true;
     }

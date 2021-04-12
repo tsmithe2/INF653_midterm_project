@@ -6,7 +6,7 @@
     }
     if ($_SESSION["action"] == "login")
     {
-        if (is_valid_admin_login($_POST["username"], $_POST["password"]))
+        if (is_valid_admin_login($_SESSION["temp_username"], $_SESSION["temp_password"]))
         {
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
