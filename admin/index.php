@@ -14,19 +14,14 @@
     session_set_cookie_params($lifetime, '/'); 
     session_start();
 
-    global $db;
     $busy = false;
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $confirm_password = $_POST["confirm_password"];
-
     $_SESSION["action"] = "";
 
-    if (!isset($_POST["username"]) && !isset($_POST["password"]) && !isset($_SESSION["username"]))
+    if (!isset($_POST["username"]) && !isset($_POST["password"]) && $_SESSION["is_logged_in"] == false)
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
-        $busy = true;
+        //$busy = true;
     }
 
     if (isset($_POST["username"]) && isset($_POST["password"])) //might need force a refresh here
@@ -35,7 +30,7 @@
         $_SESSION["temp_username"] = $_POST["username"];
         $_SESSION["temp_password"] = $_POST["password"];
         include("controllers/admin.php");
-        $busy = true;
+        //$busy = true;
     }
 
     if (isset($_POST["logout"]))

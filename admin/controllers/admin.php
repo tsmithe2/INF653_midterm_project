@@ -15,7 +15,6 @@
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
             $_SESSION["is_logged_in"] = true;
-            include("index.php");
         }
     }
     if ($_SESSION["action"] == "logout")
