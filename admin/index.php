@@ -21,7 +21,7 @@
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
-        //$busy = true;
+        $busy = true;
     }
 
     if (isset($_POST["username"]) && isset($_POST["password"]))
@@ -36,7 +36,6 @@
     {
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
-        $busy = true;
     }
 
     if (isset($_POST["add_vehicle"]))
