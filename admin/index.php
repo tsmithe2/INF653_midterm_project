@@ -21,21 +21,19 @@
     $confirm_password = $_POST["confirm_password"];
 
     $_SESSION["action"] = "";
-    $_SESSION["login_attempt"] = false;
+
+    if (!isset($_POST["username"]) && !isset($_POST["password"]) && !isset($_SESSION["username"]))
+    {
+        $_SESSION["action"] = "show_login";
+        include("controllers/admin.php");
+        $busy = true;
+    }
 
     if (isset($_POST["username"]) && isset($_POST["password"]))
     {
         $_SESSION["action"] = "login";
         $_SESSION["temp_username"] = $_POST["username"];
         $_SESSION["temp_password"] = $_POST["password"];
-        $_SESSION["login_attempt"] = true;
-        include("controllers/admin.php");
-        $busy = true;
-    }
-
-    if (!isset($_POST["username"]) && !isset($_POST["password"]) && $_SESSION["login_attempt"] == false)
-    {
-        $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
         $busy = true;
     }
