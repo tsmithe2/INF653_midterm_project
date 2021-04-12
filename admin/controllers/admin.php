@@ -20,6 +20,7 @@
         else
         {
             $_SESSION["action"] = "show_login";
+            include("admin.php");
         }
     }
     if ($_SESSION["action"] == "logout")
