@@ -20,7 +20,7 @@
     if (!isset($_SESSION["is_logged_in"]))
     {
         $_SESSION["action"] = "show_login";
-        include("controllers/admin.php");
+        include_once("controllers/admin.php");
     }
 
     if (isset($_POST["username"]) && isset($_POST["password"]))
