@@ -12,9 +12,9 @@
 
         if ($_SESSION["temp_username"] == $result["username"] && $_SESSION["temp_password"] == $result["password"])
         {
-            echo "VALID";
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
+            $_SESSION["is_logged_in"] = true;
         }
     }
     if ($_SESSION["action"] == "logout")
@@ -31,9 +31,6 @@
         $secure = $params['secure']; 
         $httponly = $params['httponly'];
         setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
-
-        //back to login page
-        include("view/login.php");
     }
     if ($_SESSION["action"] == "show_register")
     {

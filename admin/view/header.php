@@ -11,10 +11,13 @@
     <header>
         <?php
             session_start();
-            echo "<div id = 'reg'>Welcome, " . $_SESSION["username"] . "!";
-            echo "<form action = 'index.php' method = 'POST'>
-            <input type = 'submit' name = 'logout' value = 'logout' />
-            </form></div>";
+            if ($_SESSION["is_logged_in"] == true)
+            {
+                echo "<div id = 'reg'>Welcome, " . $_SESSION["username"] . "!";
+                echo "<form action = 'index.php' method = 'POST'>
+                <input type = 'submit' name = 'logout' value = 'logout' />
+                </form></div>";
+            }
         ?>
         <h2>&nbsp;Zippy Admin</h2>
     </header>

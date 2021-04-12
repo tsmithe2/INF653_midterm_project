@@ -43,6 +43,7 @@
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
         $busy = true;
+        $_SESSION["is_logged_in"] = false;
     }
 
     if (isset($_POST["add_vehicle"]))
