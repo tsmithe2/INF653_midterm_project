@@ -11,6 +11,7 @@
     <header>
         <?php
             session_start();
+            echo "yo " . $_SESSION["username"];
             if (isset($_SESSION["username"]))
             {
                 echo "<div id = 'reg'>Welcome, " . $_SESSION["username"] . "!";
