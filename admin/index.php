@@ -15,9 +15,9 @@
     session_start();
 
     $busy = false;
-    $_SESSION["action"] = "";
+    //$_SESSION["action"] = "";
 
-    if ($_SESSION["is_logged_in"] == false)
+    if ($_SESSION["is_logged_in"] == false || !isset($_SESSION["is_logged_in"]))
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
