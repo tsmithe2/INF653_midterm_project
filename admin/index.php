@@ -15,14 +15,11 @@
     session_start();
 
     $busy = false;
-    $x = 0;
-    //!isset($_SESSION["is_logged_in"])
 
-    if ($x = 0)
+    if (!isset($_SESSION["username"]))
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
-        $x = 1;
     }
 
     if (isset($_POST["username"]) && isset($_POST["password"]))
