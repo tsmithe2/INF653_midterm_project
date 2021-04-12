@@ -10,6 +10,7 @@
         $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
         $result = fetch_one($query, $db);
         echo $_SESSION["temp_username"];
+        echo $_result["username"];
 
         if ($_SESSION["temp_username"] == $result["username"] && $_SESSION["temp_password"] == $result["password"])
         {
