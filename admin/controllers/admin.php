@@ -42,10 +42,18 @@
         $tnu = $_SESSION["temp_new_user"];
         $tnp = $_SESSION["temp_new_password"];
         $cp = $_SESSION["confirm_password"];
+
+        $valid_username = false;
+        $valid_password = false;
+        $passwords_match = false;
         
         if (strlen($tnu) < 6)
         {
             echo "user is too small";
+        }
+        else
+        {
+            $valid_username = true;
         }
 
         $pattern = '/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/';
@@ -53,10 +61,23 @@
         {
             echo "<br>bad password";
         }
+        else
+        {
+            $valid_password = true;
+        }
 
         if ($tnp === $cp)
         {
             echo "<br>passwords match";
+        }
+        else
+        {
+            $passwords_match = true;
+        }
+
+        if ($valid_username && $valid_password && $passwords_match)
+        {
+            //insert
         }
     }
 ?>
