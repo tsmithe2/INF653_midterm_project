@@ -17,7 +17,7 @@
     $busy = false;
     $_SESSION["action"] = "";
 
-    if (!isset($_SESSION["username"]) && !isset($_SESSION["password"]))
+    if (!isset($_POST["username"]) && !isset($_POST["password"]) && !isset($_SESSION["username"]))
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
