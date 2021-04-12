@@ -42,10 +42,7 @@
         $errors = valid_registration($_SESSION["temp_new_user"], $_SESSION["temp_new_password"], $_SESSION["confirm_password"]);
         if (sizeof($errors) > 0 )
         {
-            for ($i = 0; $i < sizeof($errors); $i++)
-            {
-                echo $errors[$i];
-            }
+            echo "yo";
         }
     }
 ?>
