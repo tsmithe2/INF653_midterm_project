@@ -3,7 +3,6 @@
     if ($_SESSION["action"] == "show_login")
     {
         include("view/login.php");
-        $_SESSION["is_logged_in"] = true;
     }
     if ($_SESSION["action"] == "login")
     {
@@ -13,9 +12,9 @@
 
         if ($_SESSION["temp_username"] == $result["username"] && $_SESSION["temp_password"] == $result["password"])
         {
+            $_SESSION["is_logged_in"] = true;
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
-            $_SESSION["is_logged_in"] = true;
         }
     }
     if ($_SESSION["action"] == "logout")
