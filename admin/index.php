@@ -21,7 +21,7 @@
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
-        //$busy = true;
+        $busy = true;
     }
 
     if (isset($_POST["username"]) && isset($_POST["password"])) //might need force a refresh here
