@@ -22,12 +22,10 @@ function is_valid_admin_login($username, $password)
     $statement->execute(); 
     $row = $statement->fetch(); 
     $statement->closeCursor();
-    /**
     if (!empty($row["password"]))
     {
         $hash = $row['password'];
-    }*/
-    $hash = $row["password"];
+    }
     return password_verify($password, $hash); 
 }
 

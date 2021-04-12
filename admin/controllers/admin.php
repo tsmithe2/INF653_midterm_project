@@ -6,12 +6,16 @@
     }
     if ($_SESSION["action"] == "login")
     {
-        echo "status: " . is_valid_admin_login($_SESSION["temp_username"], $_SESSION["temp_password"]);
+        global $db;
+        $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
+        $result = fetch_one($query, $db);
+
+        //$_SESSION["temp_username"] == $result["username"] && $_SESSION["temp_password"] == $result["password"]
         if (is_valid_admin_login($_SESSION["temp_username"], $_SESSION["temp_password"]))
         {
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
-            include("index.php");
+            //include("index.php");
         }
         else
         {
