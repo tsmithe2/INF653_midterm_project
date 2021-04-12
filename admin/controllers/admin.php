@@ -43,12 +43,6 @@
         $tnp = $_SESSION["temp_new_password"];
         $cp = $_SESSION["confirm_password"];
         
-        for ($i = 0; $i < strlen($tnu); $i++)
-        {
-            if (IntlChar::isupper($tnu[$i]))
-            {
-                echo "uppercase";
-            }
-        }
+        echo "yo";
     }
 ?>
