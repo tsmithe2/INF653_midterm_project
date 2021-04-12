@@ -52,6 +52,9 @@
     <form action = "index.php" method = "POST">
         <input type = "submit" name = "view_edit_types" value = "View/Edit Vehicle Types" id = "butn" class="btn btn-outline-primary" />
     </form>
+    <form action = "index.php" method = "POST">
+        <input type = "submit" name = "register" value = "Register New Admin User" id = "butn" class="btn btn-outline-primary" />
+    </form>
 </div>
 
 <?php 
