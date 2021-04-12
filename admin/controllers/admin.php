@@ -36,8 +36,6 @@
         $secure = $params['secure']; 
         $httponly = $params['httponly'];
         setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
-
-        include("view/login.php");
     }
     if ($_SESSION["action"] == "show_register")
     {
