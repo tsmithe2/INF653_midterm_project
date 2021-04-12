@@ -5,7 +5,7 @@
 <div id = "nput_form">
     <h4>Please fill in your credentials to login.</h4>
 
-    <form action = "controllers/admin.php" method = "POST">
+    <form action = "index.php" method = "POST">
         <label for = "username">Username:</label><br>
         <input type = "text" name = "username" id = "nput" class = "form-control" required>
 
