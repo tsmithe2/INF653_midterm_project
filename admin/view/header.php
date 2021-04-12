@@ -11,7 +11,6 @@
     <header>
         <?php
             session_start();
-            $_SESSION["is_logged_in"] = true;
             if ($_SESSION["is_logged_in"] == true)
             {
                 echo "<div id = 'reg'>Welcome, " . $_SESSION["username"] . "!";
