@@ -19,8 +19,7 @@
         }
         else
         {
-            $_SESSION["action"] = "show_login";
-            include("admin.php");
+            $_SESSION["is_logged_in"] = false;
         }
     }
     if ($_SESSION["action"] == "logout")
