@@ -6,34 +6,29 @@
     require("controllers/type_db.php");
     require("controllers/class_db.php");
 
-    /**
+    require_once('util/secure_conn.php'); 
+    require_once('util/valid_admin.php');
+
     // Start session management with a persistent cookie 
     $lifetime = 60 * 60 * 24 * 14; // 2 weeks in seconds 
     session_set_cookie_params($lifetime, '/'); 
     session_start();
-    */
 
     global $db;
     $busy = false;
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $confirm_password = $_POST["confirm_password"];
+    //$username = $_POST["username"];
+    //$password = $_POST["password"];
+    //$confirm_password = $_POST["confirm_password"];
 
-    if (!isset($username) && !isset($password))
+    $_SESSION["action"] = "";
+
+    if (!isset($_SESSION["username"]) && !isset($_SESSION["password"]))
     {
+        $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
         $busy = true;
     }
 
-    $query = "SELECT username, password FROM administrators WHERE username = '" . $username . "' and password = '" . $password . "'";
-    $result = fetch_one($query, $db);
-
-    if ($result["username"] == $username && $username != "")
-    {
-        echo "valid username";
-    }
-
-    /**
     if (isset($_POST["add_vehicle"]))
     {
         include("view/add_vehicle_form.php");
@@ -111,5 +106,5 @@
     if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy)
     {
         include("view/vehicle_list.php");
-    }*/
+    }
 ?>
