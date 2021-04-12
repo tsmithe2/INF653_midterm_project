@@ -33,6 +33,7 @@
 
     if (isset($_POST["logout"]))
     {
+        $_SESSION["is_logged_in"] = false;
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
     }
