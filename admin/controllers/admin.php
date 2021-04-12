@@ -43,6 +43,9 @@
         $tnp = $_SESSION["temp_new_password"];
         $cp = $_SESSION["confirm_password"];
         
-        echo "yo";
+        if (strlen($tnu) < 6)
+        {
+            echo "user is too small";
+        }
     }
 ?>
