@@ -26,6 +26,7 @@ function is_valid_admin_login($username, $password)
     {
         $hash = $row['password'];
     }
+    echo "yo: " . password_verify($password, $hash);
     return password_verify($password, $hash); 
 }
 
