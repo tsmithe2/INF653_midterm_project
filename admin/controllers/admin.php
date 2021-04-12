@@ -3,7 +3,7 @@
     if ($_SESSION["action"] == "show_login")
     {
         include("view/login.php");
-        exit;
+        $_SESSION["is_logged_in"] = true;
     }
     if ($_SESSION["action"] == "login")
     {
