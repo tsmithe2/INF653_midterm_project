@@ -18,10 +18,6 @@
                 <input type = 'submit' name = 'logout' value = 'logout' />
                 </form></div>";
             }
-            else
-            {
-                echo "is_logged_in is false";
-            }
         ?>
         <h2>&nbsp;Zippy Admin</h2>
     </header>
