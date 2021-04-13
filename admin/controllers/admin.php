@@ -99,7 +99,10 @@
         {
             $_SESSION["success"] = true;
             $_SESSION["bad_register"] = true; //need this to stay on the register page
-            //insert
+            
+            //insert into database
+            $query = "INSERT INTO administrators (username, password) VALUES ('" . $tnu . "','" . $tnp . "')";
+            $result = fetch_one($query, $db);
         }
         else
         {
