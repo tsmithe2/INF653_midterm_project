@@ -50,6 +50,7 @@
         $_SESSION["username_error"] = false;
         //$_SESSION["password_error"] = false;
         //$_SESSION["match_error"] = false;
+        $_SESSION["bad_register"] = false;
         
         if (strlen($tnu) < 6)
         {
@@ -84,6 +85,10 @@
         if ($valid_username && $valid_password && $passwords_match)
         {
             //insert
+        }
+        else
+        {
+            $_SESSION["bad_register"] = true; 
         }
     }
 ?>

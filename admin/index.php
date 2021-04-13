@@ -16,6 +16,13 @@
 
     $busy = false;
 
+    if ($_SESSION["bad_register"] == true)
+    {
+        $_SESSION["action"] = "show_register";
+        include("controllers/admin.php");
+        $busy = true;
+    }
+
     if (isset($_POST["username"]) && isset($_POST["password"]))
     {
         $_SESSION["action"] = "login";
