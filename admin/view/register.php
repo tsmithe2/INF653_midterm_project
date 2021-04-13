@@ -17,7 +17,7 @@
         }
         if ($_SESSION["match_error"] == true)
         {
-            echo "<h5 style = 'color: red;'>Your password must match with the confirmation password.</h5>"
+            echo "<h5 style = 'color: red;'>Your password must match with the confirmation password.</h5>";
         }
     ?>
 

@@ -47,7 +47,7 @@
         $valid_password = false;
         $passwords_match = false;
 
-        //$_SESSION["username_error"] = false;
+        $_SESSION["username_error"] = false;
         //$_SESSION["password_error"] = false;
         //$_SESSION["match_error"] = false;
         
