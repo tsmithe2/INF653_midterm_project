@@ -16,13 +16,6 @@
 
     $busy = false;
 
-    if ($_SESSION["bad_register"] == true)
-    {
-        $_SESSION["action"] = "show_register";
-        include("controllers/admin.php");
-        $busy = true;
-    }
-
     if (isset($_POST["username"]) && isset($_POST["password"]))
     {
         $_SESSION["action"] = "login";
@@ -60,6 +53,13 @@
         $_SESSION["temp_new_password"] = $_POST["new_password"];
         $_SESSION["confirm_password"] = $_POST["confirm_password"];
         include("controllers/admin.php");
+    }
+
+    if ($_SESSION["bad_register"] == true)
+    {
+        $_SESSION["action"] = "show_register";
+        include("controllers/admin.php");
+        $busy = true;
     }
 
     if (isset($_POST["add_vehicle"]))
@@ -136,7 +136,7 @@
         $busy = true;
     }
 
-    if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy && $_SESSION["is_logged_in"] == true && $_SESSION["bad_register"] == false)
+    if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy && $_SESSION["is_logged_in"] == true)
     {
         include("view/vehicle_list.php");
     }
