@@ -39,7 +39,7 @@
         include("controllers/admin.php");
     }
 
-    if (!isset($_SESSION["is_logged_in"]))
+    if (!isset($_SESSION["is_logged_in"]) || $_SESSION["is_logged_in"] == false)
     {
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
@@ -52,6 +52,7 @@
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
         session_start();
+        $_SESSION["is_logged_in"] = false;
         $_SESSION["bad_log"] = false;
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
