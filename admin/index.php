@@ -37,6 +37,7 @@
 
     if (isset($_POST["logout"]))
     {
+        $_SESSION["bad_register"] = false;
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
         session_start();
@@ -62,6 +63,7 @@
 
     if (isset($_POST["add_vehicle"]))
     {
+        $_SESSION["bad_register"] = false;
         include("view/add_vehicle_form.php");
     }
 
@@ -79,6 +81,7 @@
 
     if (isset($_POST["view_edit_makes"]))
     {
+        $_SESSION["bad_register"] = false;
         include("view/make_list.php");
     }
 
@@ -98,6 +101,7 @@
 
     if (isset($_POST["view_edit_types"]))
     {
+        $_SESSION["bad_register"] = false;
         include("view/type_list.php");
     }
 
@@ -117,6 +121,7 @@
 
     if (isset($_POST["view_edit_classes"]))
     {
+        $_SESSION["bad_register"] = false;
         include("view/class_list.php");
     }
 
