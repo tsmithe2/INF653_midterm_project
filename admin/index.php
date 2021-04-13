@@ -136,6 +136,11 @@
         $busy = true;
     }
 
+    if (isset($_POST["view_v_list"]))
+    {
+        $_SESSION["bad_register"] = false;
+    }
+
     if (!isset($_POST["add_vehicle"]) && !isset($_POST["view_edit_makes"]) && !isset($_POST["view_edit_types"]) && !isset($_POST["view_edit_classes"]) && !$busy && $_SESSION["is_logged_in"] == true)
     {
         include("view/vehicle_list.php");

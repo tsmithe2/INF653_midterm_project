@@ -37,7 +37,7 @@
 
 <div id = "nav">
     <form action = "index.php" method = "POST">
-        <input type = "submit" value = "View Full Vehicle List" id = "butn" class="btn btn-outline-primary" />
+        <input type = "submit" name = "view_v_list" value = "View Full Vehicle List" id = "butn" class="btn btn-outline-primary" />
     </form>
     <form action = "index.php" method = "POST">
         <input type = "submit" name = "add_vehicle" value = "Add a vehicle" id = "butn" class="btn btn-outline-primary" />

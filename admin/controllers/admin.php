@@ -36,7 +36,7 @@
     {
         include("view/register.php");
     }
-    if ($_SESSION["action"] == "register")
+    if ($_SESSION["action"] == "register") //CHECK IF USERNAME ALREADY EXISTS
     {
         global $db;
         $tnu = $_SESSION["temp_new_user"];
