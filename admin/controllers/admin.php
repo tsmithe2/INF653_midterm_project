@@ -47,6 +47,7 @@
         $valid_password = false;
         $passwords_match = false;
 
+        $_SESSION["success"] = false;
         $_SESSION["username_exists"] = false;
         $_SESSION["username_error"] = false;
         $_SESSION["password_error"] = false;
@@ -91,6 +92,7 @@
 
         if ($valid_username && $valid_password && $passwords_match)
         {
+            $_SESSION["success"] = true;
             //insert
         }
         else

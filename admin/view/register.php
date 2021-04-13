@@ -6,6 +6,10 @@
     <h4>Register a new admin user</h4>
 
     <?php
+        if ($_SESSION["success"] == true)
+        {
+            echo "<h5 style = 'color: green;'>Successfully added new admin user.</h5>";
+        }
         if ($_SESSION["username_exists"] == true)
         {
             echo "<h5 style = 'color: red;'>This username is already in use.</h5>";

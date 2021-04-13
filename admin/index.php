@@ -18,6 +18,7 @@
 
     function clear_errors()
     {
+        $_SESSION["success"] = false;
         $_SESSION["username_exists"] = false;
         $_SESSION["username_error"] = false;
         $_SESSION["password_error"] = false;
