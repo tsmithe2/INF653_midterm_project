@@ -48,8 +48,8 @@
         $passwords_match = false;
 
         $_SESSION["username_error"] = false;
-        //$_SESSION["password_error"] = false;
-        //$_SESSION["match_error"] = false;
+        $_SESSION["password_error"] = false;
+        $_SESSION["match_error"] = false;
         $_SESSION["bad_register"] = false;
         
         if (strlen($tnu) < 6)
@@ -64,22 +64,20 @@
         $pattern = '/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/';
         if (preg_match($pattern, $tnp) == false)
         {
-            echo "<br>bad password";
+            $_SESSION["password_error"] = true;
         }
         else
         {
             $valid_password = true;
-            echo "<br>valid password";
         }
 
         if ($tnp === $cp)
         {
-            echo "<br>passwords match";
             $passwords_match = true;
         }
         else
         {
-            echo "<br>passwords don't match";
+            $_SESSION["match_error"] = true;
         }
 
         if ($valid_username && $valid_password && $passwords_match)
