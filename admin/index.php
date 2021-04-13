@@ -16,9 +16,17 @@
 
     $busy = false;
 
+    function clear_errors()
+    {
+        $_SESSION["username_error"] = false;
+        $_SESSION["password_error"] = false;
+        $_SESSION["match_error"] = false;
+    }
+
     if (isset($_POST["view_v_list"]))
     {
         $_SESSION["bad_register"] = false;
+        clear_errors();
     }
 
     if (isset($_POST["username"]) && isset($_POST["password"]))
@@ -38,6 +46,7 @@
     if (isset($_POST["logout"]))
     {
         $_SESSION["bad_register"] = false;
+        clear_errors();
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
         session_start();
@@ -64,6 +73,7 @@
     if (isset($_POST["add_vehicle"]))
     {
         $_SESSION["bad_register"] = false;
+        clear_errors();
         include("view/add_vehicle_form.php");
     }
 
@@ -82,6 +92,7 @@
     if (isset($_POST["view_edit_makes"]))
     {
         $_SESSION["bad_register"] = false;
+        clear_errors();
         include("view/make_list.php");
     }
 
@@ -102,6 +113,7 @@
     if (isset($_POST["view_edit_types"]))
     {
         $_SESSION["bad_register"] = false;
+        clear_errors();
         include("view/type_list.php");
     }
 
@@ -122,6 +134,7 @@
     if (isset($_POST["view_edit_classes"]))
     {
         $_SESSION["bad_register"] = false;
+        clear_errors();
         include("view/class_list.php");
     }
 
