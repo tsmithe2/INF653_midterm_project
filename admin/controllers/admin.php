@@ -47,10 +47,19 @@
         $valid_password = false;
         $passwords_match = false;
 
+        $_SESSION["username_exists"] = false;
         $_SESSION["username_error"] = false;
         $_SESSION["password_error"] = false;
         $_SESSION["match_error"] = false;
         $_SESSION["bad_register"] = false;
+
+        $query = "SELECT username FROM administrators WHERE username = '" . $tnu . "'";
+        $result = fetch_one($query, $db);
+
+        if ($result == $tnu)
+        {
+            $_SESSION["username_exists"] = true;
+        }
         
         if (strlen($tnu) < 6)
         {

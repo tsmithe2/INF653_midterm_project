@@ -6,6 +6,10 @@
     <h4>Register a new admin user</h4>
 
     <?php
+        if ($_SESSION["username_exists"] == true)
+        {
+            echo "<h5 style = 'color: red;'>This username is already in use.</h5>";
+        }
         if ($_SESSION["username_error"] == true)
         {
             echo "<h5 style = 'color: red;'>Username must be six characters or longer.</h5>";
