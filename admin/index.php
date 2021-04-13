@@ -20,6 +20,7 @@
     {
         $_SESSION["action"] = "show_register";
         include("controllers/admin.php");
+        echo "BAD REGISTER";
         $busy = true;
     }
 
