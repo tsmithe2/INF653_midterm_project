@@ -93,6 +93,7 @@
         if ($valid_username && $valid_password && $passwords_match)
         {
             $_SESSION["success"] = true;
+            $_SESSION["bad_register"] = true; //need this to stay on the register page
             //insert
         }
         else
