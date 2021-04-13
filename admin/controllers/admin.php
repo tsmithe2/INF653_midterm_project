@@ -12,9 +12,14 @@
 
         if ($_SESSION["temp_username"] == $result["username"] && $_SESSION["temp_password"] == $result["password"])
         {
+            $_SESSION["bad_log"] = false;
             $_SESSION["is_logged_in"] = true;
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["password"] = $_POST["password"];
+        }
+        else
+        {
+            $_SESSION["bad_log"] = true;
         }
     }
     if ($_SESSION["action"] == "logout")

@@ -1,9 +1,17 @@
 <?php
     include("header.php");
+    session_start();
 ?>
 
 <div id = "nput_form">
     <h4>Please fill in your credentials to login.</h4>
+
+    <?php
+        if ($_SESSION["bad_log"] == true)
+        {
+            echo "<h5 style = 'color: red;'>Incorrect Login / Login Required.</h5>";
+        }
+    ?>
 
     <form action = "index.php" method = "POST">
         <label for = "username">Username:</label><br>
