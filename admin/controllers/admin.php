@@ -46,14 +46,17 @@
         $valid_username = false;
         $valid_password = false;
         $passwords_match = false;
+
+        $_SESSION["username_error"] = false;
+        $_SESSION["password_error"] = false;
+        $_SESSION["match_error"] = false;
         
         if (strlen($tnu) < 6)
         {
-            echo "user is too small";
+            $_SESSION["username_error"] = true;
         }
         else
         {
-            echo "valid username";
             $valid_username = true;
         }
 

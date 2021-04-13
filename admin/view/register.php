@@ -8,12 +8,16 @@
     <?php
         if ($_SESSION["username_error"] == true)
         {
-            echo "<h5 style = 'color: red'>Username must be six characters or longer</h5>";
+            echo "<h5 style = 'color: red;'>Username must be six characters or longer.</h5>";
         }
         if ($_SESSION["password_error"] == true)
         {
-            echo "<h5 style = 'color: red'>Your password must contain at least one number, one uppercase letter, one lowercase letter,
-             and total 8 or more characters</h5>";
+            echo "<h5 style = 'color: red;'>Your password must contain at least one number, one uppercase letter, one lowercase letter,
+             and total 8 or more characters.</h5>";
+        }
+        if ($_SESSION["match_error"] == true)
+        {
+            echo "<h5 style = 'color: red;'>Your password must match with the confirmation password.</h5>"
         }
     ?>
 
@@ -22,10 +26,10 @@
         <input type = "text" name = "new_username" id = "nput" class = "form-control" required />
 
         <label for = "new_password">Password:</label><br>
-        <input type = "password" name = "new_password" id = "nput" class = "form-control" required />
+        <input type = "text" name = "new_password" id = "nput" class = "form-control" required />
 
         <label for = "confrim_password">Confirm Password:</label><br>
-        <input type = "password" name = "confirm_password" id = "nput" class = "form-control" required />
+        <input type = "text" name = "confirm_password" id = "nput" class = "form-control" required />
 
         <input type = "submit" value = "Register" name = "register_new_admin" id = "nput_s" class = "btn btn-success btn-lg" />
     </form>
