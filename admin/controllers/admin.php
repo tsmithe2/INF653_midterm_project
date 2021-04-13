@@ -56,7 +56,7 @@
         $query = "SELECT username FROM administrators WHERE username = '" . $tnu . "'";
         $result = fetch_one($query, $db);
 
-        if ($result == $tnu)
+        if ($result["username"] == $tnu)
         {
             $_SESSION["username_exists"] = true;
         }
