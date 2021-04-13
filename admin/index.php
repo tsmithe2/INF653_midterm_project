@@ -52,6 +52,7 @@
         $_SESSION["action"] = "logout";
         include("controllers/admin.php");
         session_start();
+        $_SESSION["bad_log"] = false;
         $_SESSION["action"] = "show_login";
         include("controllers/admin.php");
     }
