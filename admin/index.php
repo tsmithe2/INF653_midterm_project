@@ -60,13 +60,6 @@
         include("controllers/admin.php");
     }
 
-    if ($_SESSION["bad_register"] == true)
-    {
-        $_SESSION["action"] = "show_register";
-        include("controllers/admin.php");
-        $busy = true;
-    }
-
     if (isset($_POST["add_vehicle"]))
     {
         include("view/add_vehicle_form.php");
@@ -138,6 +131,13 @@
     {
         delete_class($_POST["del"]);
         include("view/class_list.php");
+        $busy = true;
+    }
+
+    if ($_SESSION["bad_register"] == true)
+    {
+        $_SESSION["action"] = "show_register";
+        include("controllers/admin.php");
         $busy = true;
     }
 
