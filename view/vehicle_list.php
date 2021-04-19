@@ -7,7 +7,6 @@
         <option value = "all_makes">View All Makes</option>
         <?php
             $query = "SELECT * FROM makes ORDER BY makeID ASC";
-            //$db = Database::getDB();
             $makes = Database::fetch_all($query);
             foreach ($makes as $make) :
                 echo "<option value = " . $make["makeID"] . ">";
@@ -20,7 +19,7 @@
         <option value = "all_types">View All Types</option>
         <?php
             $query = "SELECT * FROM types ORDER BY typeID ASC";
-            $types = fetch_all($query, $db);
+            $types = Database::fetch_all($query);
             foreach ($types as $type) :
                 echo "<option value = " . $type["typeID"] . ">";
                 echo $type["typeName"] . "</option>";
@@ -32,7 +31,7 @@
         <option value = "all_classes">View All Classes</option>
         <?php
             $query = "SELECT * FROM classes ORDER BY classID ASC";
-            $classes = fetch_all($query, $db);
+            $classes = Database::fetch_all($query);
             foreach ($classes as $class) :
                 echo "<option value = " . $class["classID"] . ">";
                 echo $class["className"] . "</option>";
@@ -91,7 +90,7 @@
                 $query = "SELECT year, makeID, model, typeID, classID, price FROM vehicles ORDER BY price DESC";
             }
             
-            $results = fetch_all($query, $db);
+            $results = Database::fetch_all($query);
             foreach ($results as $result) :
                 $make_id = $result["makeID"];
                 $type_id = $result["typeID"];
@@ -100,17 +99,17 @@
                 echo "<td>" . htmlspecialchars($result["year"]) . "</td>";
 
                 $query1 = "SELECT makeName FROM makes WHERE makeID = $make_id";
-                $result1 = fetch_one($query1, $db);
+                $result1 = Database::fetch_one($query1);
                 echo "<td>" . htmlspecialchars($result1["makeName"]) . "</td>";
 
                 echo "<td>" . htmlspecialchars($result["model"]) . "</td>";
 
                 $query2 = "SELECT typeName FROM types WHERE typeID = $type_id";
-                $result2 = fetch_one($query2, $db);
+                $result2 = Database::fetch_one($query2);
                 echo "<td>" . htmlspecialchars($result2["typeName"]) . "</td>";
 
                 $query3 = "SELECT className FROM classes WHERE classID = $class_id";
-                $result3 = fetch_one($query3, $db);
+                $result3 = Database::fetch_one($query3);
                 echo "<td>" . htmlspecialchars($result3["className"]) . "</td>";
 
                 echo "<td>$" . number_format(htmlspecialchars($result["price"])) . ".00</td>";
