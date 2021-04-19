@@ -107,18 +107,21 @@
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($result["year"]) . "</td>";
 
+                $db = Database::getDB();
                 $query1 = "SELECT makeName FROM makes WHERE makeID = $make_id";
-                $result1 = fetch_one($query1, $db);
+                $result1 = Database::fetch_one($query1, $db);
                 echo "<td>" . htmlspecialchars($result1["makeName"]) . "</td>";
 
                 echo "<td>" . htmlspecialchars($result["model"]) . "</td>";
 
+                $db = Database::getDB();
                 $query2 = "SELECT typeName FROM types WHERE typeID = $type_id";
-                $result2 = fetch_one($query2, $db);
+                $result2 = Database::fetch_one($query2, $db);
                 echo "<td>" . htmlspecialchars($result2["typeName"]) . "</td>";
 
+                $db = Database::getDB();
                 $query3 = "SELECT className FROM classes WHERE classID = $class_id";
-                $result3 = fetch_one($query3, $db);
+                $result3 = Database::fetch_one($query3, $db);
                 echo "<td>" . htmlspecialchars($result3["className"]) . "</td>";
 
                 echo "<td>$" . number_format(htmlspecialchars($result["price"])) . ".00</td>";
