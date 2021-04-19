@@ -7,7 +7,7 @@
         <option value = "all_makes">View All Makes</option>
         <?php
             $query = "SELECT * FROM makes ORDER BY makeID ASC";
-            $makes = fetch_all($query, $db);
+            $makes = Database::fetch_all($query);
             foreach ($makes as $make) :
                 echo "<option value = " . $make["makeID"] . ">";
                 echo $make["makeName"] . "</option>";
@@ -19,7 +19,7 @@
         <option value = "all_types">View All Types</option>
         <?php
             $query = "SELECT * FROM types ORDER BY typeID ASC";
-            $types = fetch_all($query, $db);
+            $types = Database::fetch_all($query);
             foreach ($types as $type) :
                 echo "<option value = " . $type["typeID"] . ">";
                 echo $type["typeName"] . "</option>";
@@ -31,7 +31,7 @@
         <option value = "all_classes">View All Classes</option>
         <?php
             $query = "SELECT * FROM classes ORDER BY classID ASC";
-            $classes = fetch_all($query, $db);
+            $classes = Database::fetch_all($query);
             foreach ($classes as $class) :
                 echo "<option value = " . $class["classID"] . ">";
                 echo $class["className"] . "</option>";
@@ -91,7 +91,7 @@
                 $query = "SELECT vehicleID, year, makeID, model, typeID, classID, price FROM vehicles ORDER BY price DESC";
             }
             
-            $results = fetch_all($query, $db);
+            $results = Database::fetch_all($query);
             $counter = 1;
 
             foreach ($results as $result) :
@@ -125,7 +125,7 @@
             endforeach;
 
             $query = "ALTER TABLE vehicles AUTO_INCREMENT = $counter";
-            fetch_one($query, $db);
+            Database::fetch_one($query);
         ?>
 
     </table>
