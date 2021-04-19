@@ -6,9 +6,8 @@
     }
     if ($_SESSION["action"] == "login")
     {
-        global $db;
         $query = "SELECT username, password FROM administrators WHERE username = '" . $_SESSION["temp_username"] . "' and password = '" . $_SESSION["temp_password"] . "'";
-        $result = fetch_one($query, $db);
+        $result = Database::fetch_one($query);
 
         if ($_SESSION["temp_username"] == $result["username"] && $_SESSION["temp_password"] == $result["password"])
         {
@@ -60,7 +59,7 @@
         $_SESSION["bad_register"] = false;
 
         $query = "SELECT username FROM administrators WHERE username = '" . $tnu . "'";
-        $result = fetch_one($query, $db);
+        $result = Database::fetch_one($query);
 
         if ($result["username"] == $tnu)
         {
@@ -102,7 +101,7 @@
             
             //insert into database
             $query = "INSERT INTO administrators (username, password) VALUES ('" . $tnu . "','" . $tnp . "')";
-            $result = fetch_one($query, $db);
+            $result = Database::fetch_one($query);
         }
         else
         {
