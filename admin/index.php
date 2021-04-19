@@ -144,14 +144,14 @@
 
     if (isset($_POST["add_class"]))
     {
-        add_class($_POST["class_name"]);
+        ClassDB::add_class($_POST["class_name"]);
         include("view/class_list.php");
         $busy = true;
     }
     
     if (isset($_POST["delete_class"]))
     {
-        delete_class($_POST["del"]);
+        ClassDB::delete_class($_POST["del"]);
         include("view/class_list.php");
         $busy = true;
     }
