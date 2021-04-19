@@ -2,7 +2,7 @@
     include("view/header.php");
 ?>
 
-<form action = "index_public.php" method = "POST">
+<form action = "index.php" method = "POST">
     <select name = "select_make" class = "form-control" id = "sel">
         <option value = "all_makes">View All Makes</option>
         <?php
