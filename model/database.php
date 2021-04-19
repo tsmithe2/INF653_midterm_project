@@ -28,7 +28,8 @@
         
         public static function fetch_all($query)
         {
-            $statement = self::$db->prepare($query); 
+            $db = self::getDB();
+            $statement = $db->prepare($query); 
             $statement->execute();
             $result = $statement->fetchAll(); 
             $statement->closeCursor();
@@ -37,7 +38,8 @@
 
         public static function fetch_one($query)
         {
-            $statement = self::$db->prepare($query); 
+            $db = self::getDB();
+            $statement = $db->prepare($query); 
             $statement->execute();
             $result = $statement->fetch(); 
             $statement->closeCursor();
