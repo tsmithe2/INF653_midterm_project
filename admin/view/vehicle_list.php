@@ -6,9 +6,8 @@
     <select name = "select_make" class = "form-control" id = "sel">
         <option value = "all_makes">View All Makes</option>
         <?php
-            $db = Database::getDB();
             $query = "SELECT * FROM makes ORDER BY makeID ASC";
-            $makes = Database::fetch_all($query, $db);
+            $makes = Database::fetch_all($query);
             foreach ($makes as $make) :
                 echo "<option value = " . $make["makeID"] . ">";
                 echo $make["makeName"] . "</option>";
@@ -19,9 +18,8 @@
     <select name = "select_type" class = "form-control" id = "sel">
         <option value = "all_types">View All Types</option>
         <?php
-            $db = Database::getDB();
             $query = "SELECT * FROM types ORDER BY typeID ASC";
-            $types = Database::fetch_all($query, $db);
+            $types = Database::fetch_all($query);
             foreach ($types as $type) :
                 echo "<option value = " . $type["typeID"] . ">";
                 echo $type["typeName"] . "</option>";
@@ -32,9 +30,8 @@
     <select name = "select_class" class = "form-control" id = "sel">
         <option value = "all_classes">View All Classes</option>
         <?php
-            $db = Database::getDB();
             $query = "SELECT * FROM classes ORDER BY classID ASC";
-            $classes = Database::fetch_all($query, $db);
+            $classes = Database::fetch_all($query);
             foreach ($classes as $class) :
                 echo "<option value = " . $class["classID"] . ">";
                 echo $class["className"] . "</option>";
@@ -94,8 +91,7 @@
                 $query = "SELECT vehicleID, year, makeID, model, typeID, classID, price FROM vehicles ORDER BY price DESC";
             }
             
-            $db = Database::getDB();
-            $results = Database::fetch_all($query, $db);
+            $results = Database::fetch_all($query);
             $counter = 1;
 
             foreach ($results as $result) :
@@ -107,21 +103,18 @@
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($result["year"]) . "</td>";
 
-                $db = Database::getDB();
                 $query1 = "SELECT makeName FROM makes WHERE makeID = $make_id";
-                $result1 = Database::fetch_one($query1, $db);
+                $result1 = Database::fetch_one($query1);
                 echo "<td>" . htmlspecialchars($result1["makeName"]) . "</td>";
 
                 echo "<td>" . htmlspecialchars($result["model"]) . "</td>";
 
-                $db = Database::getDB();
                 $query2 = "SELECT typeName FROM types WHERE typeID = $type_id";
-                $result2 = Database::fetch_one($query2, $db);
+                $result2 = Database::fetch_one($query2);
                 echo "<td>" . htmlspecialchars($result2["typeName"]) . "</td>";
 
-                $db = Database::getDB();
                 $query3 = "SELECT className FROM classes WHERE classID = $class_id";
-                $result3 = Database::fetch_one($query3, $db);
+                $result3 = Database::fetch_one($query3);
                 echo "<td>" . htmlspecialchars($result3["className"]) . "</td>";
 
                 echo "<td>$" . number_format(htmlspecialchars($result["price"])) . ".00</td>";
@@ -131,9 +124,8 @@
                 $counter++;
             endforeach;
 
-            $db = Database::getDB();
             $query = "ALTER TABLE vehicles AUTO_INCREMENT = $counter";
-            Database::fetch_one($query, $db);
+            Database::fetch_one($query);
         ?>
 
     </table>
