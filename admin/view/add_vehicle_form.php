@@ -1,12 +1,12 @@
 <?php
     $query = "SELECT * FROM makes ORDER BY makeID";
-    $makes = fetch_all($query, $db);
+    $makes = Database::fetch_all($query);
 
     $query1 = "SELECT * FROM types ORDER BY typeID";
-    $types = fetch_all($query1, $db);
+    $types = Database::fetch_all($query1);
 
     $query2 = "SELECT * FROM classes ORDER BY classID";
-    $classes = fetch_all($query2, $db);
+    $classes = Database::fetch_all($query2);
 
     require("view/header.php");
 ?>
