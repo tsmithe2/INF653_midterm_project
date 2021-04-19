@@ -1,14 +1,18 @@
 <?php
-    function add_make($make_name)
+    class MakeDB
     {
-        global $db;
-        $query = "INSERT INTO makes (makeName) VALUES ('" . addslashes($make_name) . "')";
-        fetch_one($query, $db);
-    }
-    function delete_make($make_id)
-    {
-        global $db;
-        $query = "DELETE FROM makes WHERE makeID = $make_id";
-        fetch_all($query, $db);
+        private function __construct() {}
+
+        public static function add_make($make_name)
+        {
+            $query = "INSERT INTO makes (makeName) VALUES ('" . addslashes($make_name) . "')";
+            Database::fetch_one($query);
+        }
+
+        public static function delete_make($make_id)
+        {
+            $query = "DELETE FROM makes WHERE makeID = $make_id";
+            Database::fetch_all($query);
+        }
     }
 ?>
