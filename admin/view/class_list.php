@@ -13,7 +13,7 @@
         </tr>
         <?php
             $query = "SELECT * FROM classes ORDER BY classID";
-            $classes = fetch_all($query, $db);
+            $classes = Database::fetch_all($query);
             $counter = 1;
             foreach ($classes as $class) :
                 echo "<form action = 'index.php' method = 'POST'>";
@@ -25,7 +25,7 @@
             endforeach;
 
             $query = "ALTER TABLE classes AUTO_INCREMENT = $counter";
-            fetch_one($query, $db);
+            Database::fetch_one($query);
         ?>
     </table>
 </div>
