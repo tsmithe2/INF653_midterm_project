@@ -123,14 +123,14 @@
 
     if (isset($_POST["add_type"]))
     {
-        add_type($_POST["type_name"]);
+        TypeDB::add_type($_POST["type_name"]);
         include("view/type_list.php");
         $busy = true;
     }
 
     if (isset($_POST["delete_type"]))
     {
-        delete_type($_POST["del"]);
+        TypeDB::delete_type($_POST["del"]);
         include("view/type_list.php");
         $busy = true;
     }

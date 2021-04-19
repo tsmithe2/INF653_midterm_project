@@ -13,7 +13,7 @@
         </tr>
         <?php
             $query = "SELECT * FROM types ORDER BY typeID";
-            $types = fetch_all($query, $db);
+            $types = Database::fetch_all($query);
             $counter = 1;
             foreach ($types as $type) :
                 echo "<form action = 'index.php' method = 'POST'>";
@@ -25,7 +25,7 @@
             endforeach;
 
             $query = "ALTER TABLE types AUTO_INCREMENT = $counter";
-            fetch_one($query, $db);
+            Database::fetch_one($query);
         ?>
     </table>
 </div>
