@@ -26,18 +26,18 @@
             return self::$db; 
         }
         
-        public static function fetch_all($query, $db)
+        public static function fetch_all($query)
         {
-            $statement = $db->prepare($query); 
+            $statement = self::$db->prepare($query); 
             $statement->execute();
             $result = $statement->fetchAll(); 
             $statement->closeCursor();
             return $result;
         }
 
-        public static function fetch_one($query, $db)
+        public static function fetch_one($query)
         {
-            $statement = $db->prepare($query); 
+            $statement = self::$db->prepare($query); 
             $statement->execute();
             $result = $statement->fetch(); 
             $statement->closeCursor();

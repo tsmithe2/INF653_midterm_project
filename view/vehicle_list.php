@@ -7,8 +7,8 @@
         <option value = "all_makes">View All Makes</option>
         <?php
             $query = "SELECT * FROM makes ORDER BY makeID ASC";
-            $db = Database::getDB();
-            $makes = Database::fetch_all($query, $db);
+            //$db = Database::getDB();
+            $makes = Database::fetch_all($query);
             foreach ($makes as $make) :
                 echo "<option value = " . $make["makeID"] . ">";
                 echo $make["makeName"] . "</option>";
