@@ -6,8 +6,9 @@
     <select name = "select_make" class = "form-control" id = "sel">
         <option value = "all_makes">View All Makes</option>
         <?php
+            $db = Database::getDB();
             $query = "SELECT * FROM makes ORDER BY makeID ASC";
-            $makes = Database::fetch_all($query);
+            $makes = Database::fetch_all($query, $db);
             foreach ($makes as $make) :
                 echo "<option value = " . $make["makeID"] . ">";
                 echo $make["makeName"] . "</option>";
@@ -18,8 +19,9 @@
     <select name = "select_type" class = "form-control" id = "sel">
         <option value = "all_types">View All Types</option>
         <?php
+            $db = Database::getDB();
             $query = "SELECT * FROM types ORDER BY typeID ASC";
-            $types = Database::fetch_all($query);
+            $types = Database::fetch_all($query, $db);
             foreach ($types as $type) :
                 echo "<option value = " . $type["typeID"] . ">";
                 echo $type["typeName"] . "</option>";
@@ -30,8 +32,9 @@
     <select name = "select_class" class = "form-control" id = "sel">
         <option value = "all_classes">View All Classes</option>
         <?php
+            $db = Database::getDB();
             $query = "SELECT * FROM classes ORDER BY classID ASC";
-            $classes = Database::fetch_all($query);
+            $classes = Database::fetch_all($query, $db);
             foreach ($classes as $class) :
                 echo "<option value = " . $class["classID"] . ">";
                 echo $class["className"] . "</option>";
@@ -91,7 +94,8 @@
                 $query = "SELECT vehicleID, year, makeID, model, typeID, classID, price FROM vehicles ORDER BY price DESC";
             }
             
-            $results = Database::fetch_all($query);
+            $db = Database::getDB();
+            $results = Database::fetch_all($query, $db);
             $counter = 1;
 
             foreach ($results as $result) :
@@ -124,8 +128,9 @@
                 $counter++;
             endforeach;
 
+            $db = Database::getDB();
             $query = "ALTER TABLE vehicles AUTO_INCREMENT = $counter";
-            Database::fetch_one($query);
+            Database::fetch_one($query, $db);
         ?>
 
     </table>
