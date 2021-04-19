@@ -1,6 +1,6 @@
 <?php
     require("../model/database.php");
-    require("../model/admin_db.php");
+    //require("../model/admin_db.php");
     require("controllers/vehicle_db.php");
     require("controllers/make_db.php");
     require("controllers/type_db.php");
