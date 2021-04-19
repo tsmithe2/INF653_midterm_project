@@ -13,7 +13,7 @@
         </tr>
         <?php
             $query = "SELECT * FROM makes ORDER BY makeID";
-            $makes = fetch_all($query, $db);
+            $makes = Database::fetch_all($query);
             $counter = 1;
             foreach ($makes as $make) :
                 echo "<form action = 'index.php' method = 'POST'>";
@@ -25,7 +25,7 @@
             endforeach;
 
             $query = "ALTER TABLE makes AUTO_INCREMENT = $counter";
-            fetch_one($query, $db);
+            Database::fetch_one($query);
         ?>
     </table>
 </div>

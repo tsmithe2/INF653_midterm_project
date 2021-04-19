@@ -102,14 +102,14 @@
 
     if (isset($_POST["add_make"]))
     {
-        add_make($_POST["make_name"]);
+        MakeDB::add_make($_POST["make_name"]);
         include("view/make_list.php");
         $busy = true;
     }
 
     if (isset($_POST["delete_make"]))
     {
-        delete_make($_POST["del"]);
+        MakeDB::delete_make($_POST["del"]);
         include("view/make_list.php");
         $busy = true;
     }
