@@ -42,7 +42,6 @@
     }
     if ($_SESSION["action"] == "register") //CHECK IF USERNAME ALREADY EXISTS
     {
-        global $db;
         $tnu = $_SESSION["temp_new_user"];
         $tnp = $_SESSION["temp_new_password"];
         $cp = $_SESSION["confirm_password"];
